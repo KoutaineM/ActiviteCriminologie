@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimNet - Enquête 851</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- === HEADER === -->
+        <header>
+            <h1>CRIMNET • Police Investigation System</h1>
+            <p class="case-id">Dossier : ENQUÊTE N°851</p>
+        </header>
+
+        <!-- === DASHBOARD MENU === -->
+        <nav class="dashboard">
+            <button onclick="loadPage('victime')">Victime</button>
+            <button onclick="loadPage('suspects')">Suspects</button>
+            <button onclick="loadPage('scene')">Scène de crime</button>
+            <button onclick="loadPage('autopsie')">Autopsie</button>
+            <button onclick="loadPage('adn')">Analyse ADN</button>
+            <button onclick="loadPage('temoins')">Témoins</button>
+            <button onclick="loadPage('chronologie')">Chronologie</button>
+            <button onclick="loadPage('interrogatoires')">Interrogatoires</button>
+            <button onclick="loadPage('indices')">Indices</button>
+        </nav>
+
+        <!-- === CONTENT ZONE (pages chargées ici) === -->
+        <section id="content">
+            <h2>Chronologie de l’affaire</h2>
+
+<div class="chronologie-container">
+    <p>La chronologie rassemble tous les événements importants de l’enquête. Cliquez sur chaque élément pour obtenir des détails supplémentaires.</p>
+
+    <ul>
+        <li class="clickable" data-note="Jeudi soir : Arthur Gladstone aperçoit un homme immobile devant la maison → probable Evan Reed.">Jeudi soir : observation du voisin</li>
+        <li class="clickable" data-note="Vendredi matin : Madeline aperçue au supermarché, rentre chez elle.">Vendredi matin : activité de la victime</li>
+        <li class="clickable" data-note="Vendredi entre 15h45 et 17h00 : mort de Madeline Brooks → traumatisme crânien constaté.">Vendredi après-midi : décès</li>
+        <li class="clickable" data-note="Vendredi vers 16h : bruit brusque signalé par le voisin → plante ou lampe renversée.">Vendredi vers 16h : bruit suspect</li>
+        <li class="clickable" data-note="Vendredi fin d’après-midi : voisin appelle la police après avoir remarqué l’absence de la victime.">Appel à la police</li>
+        <li class="clickable" data-note="Samedi : scène de crime sécurisée et premiers relevés effectués par les enquêteurs.">Samedi : sécurisation et relevés</li>
+        <li class="clickable" data-note="Dimanche : prélèvements ADN et analyses d’indices envoyés au laboratoire.">Dimanche : prélèvements ADN</li>
+        <li class="clickable" data-note="Lundi : résultats d’autopsie disponibles → traumatisme crânien et signes de lutte.">Lundi : autopsie</li>
+        <li class="clickable" data-note="Mardi : résultats ADN reçus → Evan Reed devient suspect principal.">Mardi : résultats ADN</li>
+    </ul>
+</div>
+
+<!-- Zone note de police -->
+<div id="note-police" class="hidden-note">
+    <p>Cliquez sur un élément pour voir les détails.</p>
+</div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

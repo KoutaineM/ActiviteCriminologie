@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimNet - Enquête 851</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- === HEADER === -->
+        <header>
+            <h1>CRIMNET • Police Investigation System</h1>
+            <p class="case-id">Dossier : ENQUÊTE N°851</p>
+        </header>
+
+        <!-- === DASHBOARD MENU === -->
+        <nav class="dashboard">
+            <button onclick="loadPage('victime')">Victime</button>
+            <button onclick="loadPage('suspects')">Suspects</button>
+            <button onclick="loadPage('scene')">Scène de crime</button>
+            <button onclick="loadPage('autopsie')">Autopsie</button>
+            <button onclick="loadPage('adn')">Analyse ADN</button>
+            <button onclick="loadPage('temoins')">Témoins</button>
+            <button onclick="loadPage('chronologie')">Chronologie</button>
+            <button onclick="loadPage('interrogatoires')">Interrogatoires</button>
+            <button onclick="loadPage('indices')">Indices</button>
+        </nav>
+
+        <!-- === CONTENT ZONE (pages chargées ici) === -->
+        <section id="content">
+            <h2>Bienvenue sur CRIMNET</h2>
+            <p>Sélectionnez un module dans le tableau de bord pour accéder au dossier de l'enquête.</p>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

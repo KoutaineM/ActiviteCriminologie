@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimNet - Enquête 851</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- === HEADER === -->
+        <header>
+            <h1>CRIMNET • Police Investigation System</h1>
+            <p class="case-id">Dossier : ENQUÊTE N°851</p>
+        </header>
+
+        <!-- === DASHBOARD MENU === -->
+        <nav class="dashboard">
+            <button onclick="loadPage('victime')">Victime</button>
+            <button onclick="loadPage('suspects')">Suspects</button>
+            <button onclick="loadPage('scene')">Scène de crime</button>
+            <button onclick="loadPage('autopsie')">Autopsie</button>
+            <button onclick="loadPage('adn')">Analyse ADN</button>
+            <button onclick="loadPage('temoins')">Témoins</button>
+            <button onclick="loadPage('chronologie')">Chronologie</button>
+            <button onclick="loadPage('interrogatoires')">Interrogatoires</button>
+            <button onclick="loadPage('indices')">Indices</button>
+        </nav>
+
+        <!-- === CONTENT ZONE (pages chargées ici) === -->
+        <section id="content">
+            <h2>Témoin : Arthur "Art" Gladstone</h2>
+
+<div class="temoin-container">
+
+    <p>Arthur Gladstone, 72 ans, est le voisin qui a alerté la police. Les élèves peuvent cliquer sur les éléments ci-dessous pour obtenir ses observations détaillées.</p>
+
+    <ul>
+        <li class="clickable" data-note="Arthur a vu un homme immobile devant la maison jeudi soir → probable Evan Reed.">Homme immobile jeudi soir</li>
+        <li class="clickable" data-note="Un bruit brusque vendredi vers 16h, probablement la lampe ou la plante renversée.">Bruit brusque vendredi</li>
+        <li class="clickable" data-note="Il a vu une silhouette sortir par la porte arrière, trop vite pour identifier → suspect potentiel.">Silhouette sortie par la porte arrière</li>
+        <li class="clickable" data-note="Aucun véhicule n’a démarré, donc le suspect est probablement parti à pied.">Aucun véhicule aperçu</li>
+    </ul>
+
+    <p>Les élèves peuvent utiliser ces observations pour **recouper avec la scène de crime, les suspects et les indices ADN**.</p>
+
+    <h3>Fiche acteur pour animateur</h3>
+    <ul>
+        <li class="clickable" data-note="Attitude à jouer : très bavard, aime donner des détails inutiles, un peu paranoïaque.">Attitude à jouer</li>
+        <li class="clickable" data-note="Informations à révéler seulement si les élèves posent les bonnes questions : casquette UPS, porte mal fermée, aucun véhicule.">Informations à révéler</li>
+    </ul>
+
+</div>
+
+<!-- Zone note de police -->
+<div id="note-police" class="hidden-note">
+    <p>Cliquez sur un élément pour révéler les détails du témoin.</p>
+</div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

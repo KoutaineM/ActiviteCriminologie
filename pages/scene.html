@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimNet - Enquête 851</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- === HEADER === -->
+        <header>
+            <h1>CRIMNET • Police Investigation System</h1>
+            <p class="case-id">Dossier : ENQUÊTE N°851</p>
+        </header>
+
+        <!-- === DASHBOARD MENU === -->
+        <nav class="dashboard">
+            <button onclick="loadPage('victime')">Victime</button>
+            <button onclick="loadPage('suspects')">Suspects</button>
+            <button onclick="loadPage('scene')">Scène de crime</button>
+            <button onclick="loadPage('autopsie')">Autopsie</button>
+            <button onclick="loadPage('adn')">Analyse ADN</button>
+            <button onclick="loadPage('temoins')">Témoins</button>
+            <button onclick="loadPage('chronologie')">Chronologie</button>
+            <button onclick="loadPage('interrogatoires')">Interrogatoires</button>
+            <button onclick="loadPage('indices')">Indices</button>
+        </nav>
+
+        <!-- === CONTENT ZONE (pages chargées ici) === -->
+        <section id="content">
+            <h2>Scène de crime : Maison de Madeline Brooks</h2>
+
+<div class="scene-container">
+
+    <!-- Image globale de la maison -->
+    <div class="scene-image">
+        <img src="https://via.placeholder.com/600x400?text=Salon+Maison+Madeline" alt="Salon de Madeline" usemap="#scene-map">
+    </div>
+
+    <!-- Map interactive -->
+    <map name="scene-map">
+        <!-- Lampe renversée -->
+        <area shape="rect" coords="100,150,180,250" href="#" class="clickable" data-note="Lampe renversée : coin avec trace de choc → probable arme du crime.">
+        <!-- Pile de livres -->
+        <area shape="rect" coords="200,300,260,360" href="#" class="clickable" data-note="Pile de livres renversée : signe de lutte impulsive.">
+        <!-- Plante brisée -->
+        <area shape="rect" coords="400,200,460,300" href="#" class="clickable" data-note="Plante verte brisée (2 pots sur 7) : indique des mouvements brusques.">
+        <!-- Mug cassé -->
+        <area shape="rect" coords="320,320,350,350" href="#" class="clickable" data-note="Mug cassé sous la table : éclats projetés à 1 m → geste impulsif.">
+        <!-- Porte arrière -->
+        <area shape="rect" coords="500,100,580,200" href="#" class="clickable" data-note="Porte arrière mal fermée : sol boueux, possible entrée/sortie du tueur.">
+    </map>
+
+</div>
+
+<!-- Zone note de police -->
+<div id="note-police" class="hidden-note">
+    <p>Cliquer sur un objet pour révéler un indice.</p>
+</div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

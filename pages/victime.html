@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrimNet - Enquête 851</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- === HEADER === -->
+        <header>
+            <h1>CRIMNET • Police Investigation System</h1>
+            <p class="case-id">Dossier : ENQUÊTE N°851</p>
+        </header>
+
+        <!-- === DASHBOARD MENU === -->
+        <nav class="dashboard">
+            <button onclick="loadPage('victime')">Victime</button>
+            <button onclick="loadPage('suspects')">Suspects</button>
+            <button onclick="loadPage('scene')">Scène de crime</button>
+            <button onclick="loadPage('autopsie')">Autopsie</button>
+            <button onclick="loadPage('adn')">Analyse ADN</button>
+            <button onclick="loadPage('temoins')">Témoins</button>
+            <button onclick="loadPage('chronologie')">Chronologie</button>
+            <button onclick="loadPage('interrogatoires')">Interrogatoires</button>
+            <button onclick="loadPage('indices')">Indices</button>
+        </nav>
+
+        <!-- === CONTENT ZONE (pages chargées ici) === -->
+        <section id="content">
+        <h2>Fiche Victime : Madeline Brooks</h2>
+
+<div class="victime-container">
+
+    <!-- PHOTO -->
+    <div class="victime-photo">
+        <img src="https://via.placeholder.com/200x250?text=Madeline+Brooks" alt="Madeline Brooks">
+    </div>
+
+    <!-- BIOGRAPHIE -->
+    <div class="victime-info">
+        <h3>Informations personnelles</h3>
+        <ul>
+            <li class="clickable" data-note="Aucun antécédent médical connu.">Nom : Madeline Brooks</li>
+            <li class="clickable" data-note="Âge confirmé par le registre municipal.">Âge : 38 ans</li>
+            <li>Profession : Enseignante en littérature au lycée d’Ashland</li>
+            <li class="clickable" data-note="Elle vivait seule depuis un an après sa séparation.">Situation : Célibataire depuis 1 an</li>
+            <li>Famille : Parents au Kansas, frère à Seattle</li>
+            <li>Caractère : Empathique, calme, très appréciée</li>
+        </ul>
+
+        <h3>Vie personnelle et activités</h3>
+        <ul>
+            <li class="clickable" data-note="Elle aidait certains élèves en difficulté émotionnelle, ce qui peut être pertinent pour les suspects potentiels.">Club de jardinage</li>
+            <li>Appréciée par tous ses élèves</li>
+            <li class="clickable" data-note="Une lettre d’un élève mentionne avoir été soutenu par Madeline récemment.">Aidait des élèves en difficulté émotionnelle</li>
+        </ul>
+
+        <h3>Relations et conflits</h3>
+        <ul>
+            <li>Aucun conflit professionnel signalé</li>
+            <li class="clickable" data-note="Certains voisins disaient qu’elle attirait parfois des personnes perdues, potentiellement des suspects émotionnellement instables.">Quelques voisins disent qu’elle “attirait parfois des gens perdus”</li>
+            <li class="clickable" data-note="Lettre trouvée dans sa chambre : 'Merci de m’avoir aidé…'">Dernières interactions : lettre d’un élève</li>
+        </ul>
+
+        <h3>Dernières 48h avant le drame</h3>
+        <ul>
+            <li>Aperçue vendredi matin au supermarché</li>
+            <li class="clickable" data-note="Absente à son cours du vendredi après-midi : temps possible du meurtre.">Absente à son cours du vendredi après-midi</li>
+            <li class="clickable" data-note="Messages non lus sur son téléphone : pourrait contenir indices sur suspects ou contacts récents.">Messages non lus sur son téléphone</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Zone note de police -->
+<div id="note-police" class="hidden-note">
+    <p></p>
+</div>
+
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

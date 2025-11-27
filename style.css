@@ -1,309 +1,485 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Roboto Mono", monospace;
-}
-
 body {
-    background-color: #0b0f14;
-    color: #dbe9ff;
-}
+            font-family: 'Inter', sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
 
-/* HEADER */
-header {
-    text-align: center;
-    padding: 25px 0;
-    border-bottom: 1px solid #1a2533;
-    background: rgba(20, 20, 30, 0.8);
-}
+        #app {
+            width: 100%;
+            max-width: 1200px;
+            background-color: #1e1e1e;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 20px;
+        }
 
-header h1 {
-    font-size: 28px;
-    letter-spacing: 2px;
-}
+        /* === HEADER === */
+        header {
+            background-color: #1a2533;
+            color: #4ef0c3;
+            padding: 15px 30px;
+            border-bottom: 2px solid #2a3d52;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
 
-.case-id {
-    color: #4ef0c3;
-    margin-top: 5px;
-}
+        header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
 
-/* DASHBOARD */
-.dashboard {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    padding: 20px;
-    border-bottom: 1px solid #1a2533;
-}
+        header .case-id {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #a0a0a0;
+        }
 
-.dashboard button {
-    background: #14202e;
-    border: 1px solid #4aa3ff;
-    color: #dbe9ff;
-    padding: 12px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.2s;
-}
+        /* === DASHBOARD MENU === */
+        .dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px 30px;
+            background-color: #151e29;
+            gap: 8px;
+            border-bottom: 1px solid #2a3d52;
+        }
 
-.dashboard button:hover {
-    background: #1f3145;
-    box-shadow: 0 0 8px #4aa3ff;
-}
+        .dashboard button {
+            background-color: #2a3d52;
+            color: #e0e0e0;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+            flex-grow: 1;
+            min-width: 120px;
+        }
 
-/* CONTENT AREA */
-#content {
-    padding: 30px;
-    min-height: 60vh;
-}
+        .dashboard button:hover {
+            background-color: #4ef0c3;
+            color: #121212;
+            box-shadow: 0 0 10px rgba(78, 240, 195, 0.5);
+        }
+
+        /* Styles pour le bouton actif (simulé via JS ou classe) */
+        .dashboard button.active {
+            background-color: #4ef0c3;
+            color: #121212;
+            font-weight: bold;
+        }
+
+        /* === CONTENT ZONE === */
+        #content {
+            padding: 30px;
+            min-height: 400px; /* Assure une hauteur pour l'affichage initial */
+        }
+        
+        #content > div {
+             /* Permet aux layouts internes d'utiliser la grille */
+             display: grid; 
+             grid-template-columns: 1fr;
+             gap: 20px;
+        }
+        
+        #content h2 {
+            color: #4ef0c3;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-top: 0;
+            grid-column: 1 / -1;
+        }
+
+        #content h3 {
+            color: #e0e0e0;
+            border-left: 4px solid #4ef0c3;
+            padding-left: 10px;
+            margin-top: 20px;
+        }
+
+        .info-section {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Style pour le texte interactif (indice) */
+        .clickable {
+            color: #4aa3ff;
+            cursor: pointer;
+            font-weight: 500;
+            transition: color 0.1s;
+            display: inline-block;
+        }
+
+        .clickable:hover {
+            color: #72b3ff;
+            text-decoration: underline;
+        }
+
+        /* === ZONE NOTE DE POLICE (Révélation d'indice) === */
+        #note-police-wrapper {
+            padding: 0 30px 30px 30px; /* Aligner avec le padding de #content */
+        }
+        
+        #note-police {
+            background-color: #151e29;
+            border: 1px solid #2a3d52;
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #note-police p {
+            margin: 0;
+            color: #a0a0a0;
+            font-style: italic;
+            min-height: 20px; /* Assure une hauteur minimale */
+        }
+
+        #note-police.active-note {
+            background-color: #333333;
+            border-color: #4ef0c3;
+            box-shadow: 0 0 15px rgba(78, 240, 195, 0.4);
+        }
+
+        #note-police strong {
+            color: #4ef0c3;
+        }
+
+        /* === VICTIME & SUSPECTS Layouts === */
+        .victime-container {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .victime-photo img {
+            border-radius: 8px;
+            object-fit: cover;
+            border: 3px solid #333;
+        }
+
+        .victime-info ul, .info-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .victime-info li, .info-section li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .victime-info li::before, .info-section li::before {
+            content: "•";
+            color: #4ef0c3;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .suspects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .suspect-card {
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .suspect-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+        }
+
+        .suspect-card img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            border: 2px solid #333;
+        }
+
+        .suspect-card h3 {
+            margin: 10px 0 15px 0;
+            color: #4ef0c3;
+            font-size: 1.2rem;
+            border: none;
+            padding-left: 0;
+        }
+
+        .suspect-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        .suspect-card li::before {
+            content: "→";
+            color: #a0a0a0;
+        }
+
+        /* === SCÈNE DE CRIME === */
+        .scene-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .scene-image {
+            text-align: center;
+            border: 2px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .scene-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+        }
+
+        /* === AUTOPSIE/ADN Locked Reports === */
+        .report-locked {
+            background-color: #333;
+            border: 2px solid #8b0000;
+            padding: 40px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(139, 0, 0, 0.5);
+        }
+
+        .report-locked h3 {
+            color: #ff7f7f;
+            font-size: 1.8rem;
+        }
+
+        .report-locked p {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+        }
+
+        .report-locked input {
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border: 1px solid #555;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            text-align: center;
+            width: 200px;
+        }
+
+        .report-locked button {
+            background-color: #ff7f7f;
+            color: #121212;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s, box-shadow 0.2s;
+        }
+
+        .report-locked button:hover {
+            background-color: #ff9999;
+            box-shadow: 0 0 10px rgba(255, 127, 127, 0.7);
+        }
+
+        .report-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .report-content li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        .report-content li::before {
+            content: "✓";
+            color: #4ef0c3;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* === CHRONOLOGIE === */
+        .timeline-wrapper {
+            position: relative;
+            padding: 20px 0;
+            border-left: 3px solid #333;
+            margin-left: 20px;
+        }
+
+        .timeline-wrapper ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 10px 20px;
+            background-color: #2a2a2a;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            border-left: 4px solid #4ef0c3;
+            cursor: pointer;
+            transition: background-color 0.2s, border-left-color 0.2s;
+        }
+
+        .timeline-item:hover {
+            background-color: #333333;
+            border-left-color: #e0e0e0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 12px;
+            height: 12px;
+            background-color: #4ef0c3;
+            border-radius: 50%;
+            border: 3px solid #1e1e1e;
+        }
+
+        .timeline-time {
+            display: block;
+            font-weight: bold;
+            color: #4ef0c3;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item.highlight {
+            border-left-color: #ff7f7f;
+        }
+        .timeline-item.highlight::before {
+            background-color: #ff7f7f;
+        }
+
+        /* === INTERROGATOIRES === */
+        .interrogatoire-container .final-instruction {
+            font-style: italic;
+            color: #4ef0c3;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        /* === INDICES Table === */
+        .indices-table-wrapper {
+            overflow-x: auto;
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .indices-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        .indices-table th, .indices-table td {
+            border: 1px solid #333;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .indices-table th {
+            background-color: #1a2533;
+            color: #4ef0c3;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .indices-table tr:nth-child(even) {
+            background-color: #252525;
+        }
+
+        .indices-table tr:hover {
+            background-color: #333333;
+        }
 
 
-.clickable {
-    cursor: pointer;
-    position: relative;
-    color: #4aa3ff;
-    transition: 0.2s;
-}
+        /* === Media Queries for Responsiveness === */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header h1 {
+                font-size: 1.3rem;
+            }
+            header .case-id {
+                margin-top: 5px;
+            }
+            
+            .dashboard {
+                padding: 10px 15px;
+                justify-content: center;
+            }
+            
+            .dashboard button {
+                flex-grow: 1;
+                min-width: unset;
+            }
 
-.clickable:hover {
-    text-decoration: underline;
-    color: #4ef0c3;
-}
+            #content, #note-police-wrapper {
+                padding: 15px;
+            }
 
-/* Notes de police */
-.hidden-note {
-    display: none;
-    background-color: #14202e;
-    border: 1px solid #4ef0c3;
-    padding: 12px;
-    border-radius: 6px;
-    margin-top: 15px;
-    max-width: 500px;
-}
+            .victime-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .victime-info ul, .info-section ul {
+                text-align: left;
+            }
+            
+            .suspect-card {
+                padding: 10px;
+            }
+            
+            .timeline-wrapper {
+                margin-left: 10px;
+            }
 
-.hidden-note p {
-    margin: 0;
-}
-.hidden-note.visible {
-    display: block;
-}
-
-.suspects-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    margin-top: 20px;
-    justify-content: center;
-}
-
-.suspect-card {
-    background-color: #14202e;
-    border: 2px solid #4aa3ff;
-    border-radius: 8px;
-    padding: 15px;
-    width: 220px;
-    text-align: center;
-    transition: 0.2s;
-}
-
-.suspect-card:hover {
-    box-shadow: 0 0 12px #4ef0c3;
-}
-
-.suspect-card img {
-    border-radius: 6px;
-    width: 150px;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.suspect-card h3 {
-    color: #4ef0c3;
-    margin-bottom: 10px;
-}
-
-.suspect-card ul {
-    list-style-type: none;
-    text-align: left;
-}
-
-.suspect-card ul li {
-    margin-bottom: 6px;
-}
-
-.scene-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.scene-image img {
-    border: 2px solid #4ef0c3;
-    border-radius: 8px;
-    max-width: 100%;
-    height: auto;
-}
-
-#autopsie-locked {
-    text-align: center;
-    margin-top: 20px;
-}
-
-#autopsie-locked input {
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid #4aa3ff;
-    margin-right: 10px;
-}
-
-#autopsie-locked button {
-    padding: 8px 12px;
-    border-radius: 6px;
-    border: 1px solid #4aa3ff;
-    background-color: #14202e;
-    color: #dbe9ff;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-#autopsie-locked button:hover {
-    background-color: #1f3145;
-    box-shadow: 0 0 8px #4aa3ff;
-}
-
-#unlock-message {
-    margin-top: 10px;
-    color: #f05a5a;
-}
-
-#adn-locked {
-    text-align: center;
-    margin-top: 20px;
-}
-
-#adn-locked input {
-    padding: 8px;
-    border-radius: 6px;
-    border: 1px solid #4aa3ff;
-    margin-right: 10px;
-}
-
-#adn-locked button {
-    padding: 8px 12px;
-    border-radius: 6px;
-    border: 1px solid #4aa3ff;
-    background-color: #14202e;
-    color: #dbe9ff;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-#adn-locked button:hover {
-    background-color: #1f3145;
-    box-shadow: 0 0 8px #4aa3ff;
-}
-
-
-.interrogatoire-container {
-    margin-top: 20px;
-}
-
-.interrogatoire-container ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.interrogatoire-container li {
-    padding: 4px 0;
-}
-
-.clickable {
-    cursor: pointer;
-    color: #4aa3ff;
-    transition: 0.2s;
-}
-
-.clickable:hover {
-    text-decoration: underline;
-    color: #4ef0c3;
-}
-
-.chronologie-container {
-    margin-top: 20px;
-}
-
-.chronologie-container ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.chronologie-container li {
-    padding: 6px 0;
-}
-
-.clickable {
-    cursor: pointer;
-    color: #4aa3ff;
-    transition: 0.2s;
-}
-
-.clickable:hover {
-    text-decoration: underline;
-    color: #4ef0c3;
-}
-
-/* Texte un peu plus grand pour tout le contenu */
-#content, .suspect-card, .scene-container, .interrogatoire-container, .chronologie-container, .temoin-container {
-    font-size: 1.1rem;
-    line-height: 1.6;
-}
-
-/* Notes de police un peu plus grandes et lisibles */
-.hidden-note {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-/* Ajustement du dashboard pour plus d'espace */
-.dashboard button {
-    padding: 14px 20px;
-    font-size: 1rem;
-}
-
-/* Fiches suspects : colonnes plus larges et espacées */
-
-
-
-.suspect-card h3 {
-    font-size: 1.3rem;
-}
-
-/* Espacement général pour les sections */
-.interrogatoire-container,
-.chronologie-container,
-.temoin-container,
-.scene-container,
-#autopsie-content,
-#adn-content {
-    margin-bottom: 30px;
-}
-
-/* Images de scène légèrement plus grandes */
-.scene-image img {
-    max-width: 90%;
-}
-
-/* Inputs et boutons légèrement plus grands */
-#autopsie-locked input,
-#adn-locked input {
-    font-size: 1rem;
-    padding: 10px;
-}
-
-#autopsie-locked button,
-#adn-locked button {
-    font-size: 1rem;
-    padding: 10px 16px;
-}
+            .timeline-item::before {
+                left: -18px;
+            }
+        }

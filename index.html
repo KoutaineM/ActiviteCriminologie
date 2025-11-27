@@ -18,6 +18,7 @@
 
         <!-- === DASHBOARD MENU === -->
         <nav class="dashboard">
+            <button onclick="loadPage('home')">Home</button>
             <button onclick="loadPage('victime')">Victime</button>
             <button onclick="loadPage('suspects')">Suspects</button>
             <button onclick="loadPage('scene')">Scène de crime</button>
@@ -29,11 +30,18 @@
             <button onclick="loadPage('indices')">Indices</button>
         </nav>
 
-        <!-- === CONTENT ZONE (pages chargées ici) === -->
+       <!-- === CONTENT ZONE (pages chargées ici) === -->
         <section id="content">
-            <h2>Bienvenue sur CRIMNET</h2>
-            <p>Sélectionnez un module dans le tableau de bord pour accéder au dossier de l'enquête.</p>
+            <!-- Le contenu dynamique (pages) sera injecté ici par script.js -->
         </section>
+        
+        <!-- === ZONE NOTE DE POLICE (Révélation d'indice) - STATIQUE === -->
+        <!-- CET ÉLÉMENT N'EST PAS EFFACÉ AU CHANGEMENT DE PAGE, ce qui résout le problème. -->
+        <div id="note-police-wrapper">
+            <div id="note-police">
+                <p>Cliquez sur un élément pour voir les détails.</p>
+            </div> 
+        </div>
 
     </div>
 

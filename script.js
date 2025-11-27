@@ -15,16 +15,17 @@ const HOME_CONTENT = `
         <p><strong>Date de découverte :</strong> Vendredi 15 novembre, 17h30.</p>
         
         <div class="info-section">
-            <h3>Description Sommaire</h3>
-            <p>Madeline Shaw, critique d'art et militante locale, a été retrouvée morte dans sa cuisine. Le décès est survenu par traumatisme contondant à la tête. L'arme du crime n'a pas été retrouvée sur la scène.</p>
-            <p>Ce dossier est mis à disposition des enquêteurs pour analyse et recoupement des indices. Les pages "Autopsie" et "Analyse ADN" nécessitent un code de sécurité (fourni par le Game Master) pour accès aux informations sensibles.</p>
+            <h3>Contexte de l'enquête</h3>
+            <p>Madeline Shaw, professeure d'anglais, a été retrouvée morte dans sa cuisine. Le décès est survenu par traumatisme contondant à la tête. L'arme du crime n'a pas été retrouvée sur la scène.</p>
+            <p>Le dossier de l'affaire est déjà passé dans les mains d'une équipe d'enquêteurs. Cependant, après avoir reçu des menaces, ils ont décidé d'abandonner l'affaire. C'est dans ce contexte que votre équipe de jeunes enquêteurs motivés évoluent. Vous n'avez rien à perdre et tout à prouver.</p>
+            <p>Le dossier mis à disposition est celui des enquêteurs précédents et contient des analyses et recoupement des indices. Les rapports d'autopsie et de relevé ADN ne nous sont pas encore parvenu, les équipes scientifiques sont sur le coup et travaillent d'arrache-pied pour vous donner leur résultats au plus vite.</p>
         </div>
         <div class="info-section">
-            <h3>Instructions pour les Joueurs (Élèves)</h3>
+            <h3>Instructions pour les Joueurs</h3>
             <ul>
                 <li>Utilisez le menu ci-dessus pour naviguer dans les éléments du dossier.</li>
-                <li>Cherchez les éléments "cliquables" (texte en bleu) pour révéler des notes confidentielles destinées au Game Master (GM), qui peuvent vous donner des indices ou des informations d'interprétation.</li>
-                <li>Recoupez les informations des Suspects, de la Scène de crime et des Témoins pour identifier l'auteur.</li>
+                <li>Cherchez les éléments "cliquables" (texte en bleu) pour révéler des notes confidentielles laissée par les enquêteurs précédents, qui peuvent vous donner des indices ou des informations complémentaires (ou non !).</li>
+                <li>Recoupez les informations des Suspects, de la Scène de crime et des Témoins pour identifier l'auteur du crime.</li>
             </ul>
         </div>
     </div>
@@ -43,18 +44,18 @@ const VICTIME_CONTENT = `
                 <ul>
                     <li><strong>Nom :</strong> Shaw, Madeline</li>
                     <li><strong>Âge :</strong> 48 ans</li>
-                    <li><strong>Profession :</strong> Critique d'art et activiste communautaire.</li>
+                    <li><strong>Profession :</strong> Professeure d'anglais.</li>
                     <li><strong>Dernière vue :</strong> Jeudi 14 novembre, 23h00 (par son voisin).</li>
-                    <li class="clickable" data-note="Madeline avait de nombreux conflits : un avec un promoteur immobilier (Ryan Kessler), et des tensions avec une voisine (Hannah Leroux). Un nouveau conflit (Evan Reed) sera révélé plus tard."><strong>Conflits récents :</strong> Multiples (voir Interrogatoires).</li>
+                    <li class="clickable" data-note="Madeline avait un conflit bien connu avec sa voisine à propos des aboiements de son chien qui pouvaient durer des nuits entières."><strong>Conflits récents :</strong> Hannah Leroux.</li>
                 </ul>
             </div>
         </div>
         <div class="info-section">
             <h3>Contexte Social</h3>
-            <p>Madeline Shaw était bien connue dans la ville pour ses opinions tranchées et son engagement. Elle venait de terminer un article acerbe sur les pratiques d'un promoteur local.</p>
+            <p>Madeline Shaw était très apprécié par ses collègues professeurs et ses élèves. De plus, elle était bien connue dans la ville, ces articles dans la gazette locale avait de beaucoup de succès. Elle venait, d'ailleurs, de terminer un article acerbe sur les pratiques d'un promoteur local Ryan Kessler.</p>
             <ul>
                 <li class="clickable" data-note="Indice pour l'enquête : elle n'était pas mariée, pas d'enfants. Ses bénéficiaires sont des associations.">Situation familiale : Célibataire.</li>
-                <li class="clickable" data-note="Ses habitudes : Café au lait tous les matins, promenades avec son chien (absent du domicile, il était chez une amie).">Habitudes : Très régulières.</li>
+                <li class="clickable" data-note="Ses habitudes : Café au lait tous les matins, promenades dans le parc municipal et acheter son pain chez la boulangère.">Habitudes : Très régulières.</li>
             </ul>
         </div>
     </div>
@@ -64,7 +65,7 @@ const VICTIME_CONTENT = `
 const SUSPECTS_CONTENT = `
     <div>
         <h2>Fiche Suspects Initiaux</h2>
-        <p>Quatre individus présentant un lien avec la victime ou la scène ont été identifiés par la police. Leurs profils sont mis à jour après la première série d'interrogatoires.</p>
+        <p>Quatre individus présentant un lien avec la victime ou la scène ont été identifiés par la police. Leurs profils sont mis à jour après la première série d'interrogatoires réalisée par les prédécents enquêteurs.</p>
 
         <div class="suspects-container">
 
@@ -73,22 +74,22 @@ const SUSPECTS_CONTENT = `
                 <img src="https://via.placeholder.com/150x200/151e29/4aa3ff?text=Evan+Reed" alt="Evan Reed">
                 <h3>Evan Reed (25 ans)</h3>
                 <ul>
-                    <li class="clickable" data-note="Livreur UPS, connu pour attendre devant des maisons après livraison.">Profession : Livreur UPS</li>
-                    <li class="clickable" data-note="Vu près de la maison de Madeline la veille du meurtre. Il avait développé une obsession amoureuse malsaine pour elle.">Lien avec la victime : Obsession.</li>
-                    <li class="clickable" data-note="Comportement impulsif, agitation, contradictions possibles en interrogatoire.">Profil psychologique : Instable, impulsif</li>
-                    <li class="clickable" data-note="Empreinte partielle correspond au groupe sanguin d’Evan.">Indices physiques : Empreinte partielle</li>
+                    <li class="clickable">Profession : Livreur UPS</li>
+                    <li class="clickable" data-note="Vu près de la maison de Madeline la veille du meurtre. Il effectuait la livraison d'un colis bel et bien commandé par Mme Shaw.">Lien avec la victime : Dernière personne à avoir vu Mme Shaw vivante.</li>
+                    <li class="clickable" data-note="Comportement impulsif lors de l'interrogatoire, et quelques contradictions.">Profil psychologique : Impulsif</li>
+                    <li class="clickable" data-note="Alibi non vérifiable">Alibi : Il jouait aux jeux vidéos en ligne avec ses amis.</li>
                 </ul>
             </div>
 
             <!-- Suspect B - Hannah Leroux -->
             <div class="suspect-card">
                 <img src="https://via.placeholder.com/150x200/151e29/4aa3ff?text=Hannah+Leroux" alt="Hannah Leroux">
-                <h3>Hannah Leroux (33 ans)</h3>
+                <h3>Hannah Leroux (62 ans)</h3>
                 <ul>
                     <li>Profession : Voisine directe</li>
                     <li class="clickable" data-note="Conflit léger avec Madeline (chien, places de parking).">Lien avec la victime : Voisine</li>
-                    <li class="clickable" data-note="Anxieuse, agressivité latente. Appels multiples à la police pour des plaintes minimes.">Profil psychologique : Anxieuse, impulsive</li>
-                    <li class="clickable" data-note="Pas de lien ADN, alibi faible mais non impossible.">Indices : Aucun ADN trouvé</li>
+                    <li class="clickable" data-note="Anxiosité et agressivité latente durant l'interrogatoire. manque d'enphatie pour la victime. Appels multiples à la police pour des plaintes minimes.">Profil psychologique : Anxieuse, impulsive</li>
+                    <li class="clickable" data-note="Alibi faible mais non impossible.">Alibi : Elle a l'habitude d'aller à la cueillette aux champignons à ces heures-ci, habitudes confirmé par plusieurs habitants du quartier. </li>
                 </ul>
             </div>
 
@@ -98,11 +99,70 @@ const SUSPECTS_CONTENT = `
                 <h3>Jonah Miller (17 ans)</h3>
                 <ul>
                     <li>Profession : Lycéen</li>
-                    <li class="clickable" data-note="Élève soutenu par Madeline, réaction émotionnelle excessive à un rejet affectif.">Lien avec la victime : Élève</li>
-                    <li class="clickable" data-note="Profil fragile, en crise émotionnelle. Absence le jour du meurtre.">Profil psychologique : Fragile, sensible</li>
-                    <li class="clickable" data-note="Aucune trace physique mais peut être mis sous pression lors de l’interrogatoire.">Indices : Aucun physique</li>
+                    <li class="clickable" data-note="Élève soutenu psychologiquement par Madeline, réaction émotionnelle excessive à un rejet affectif.">Lien avec la victime : Élève</li>
+                    <li class="clickable" data-note="Profil fragile, en crise émotionnelle. Absent en cours le jour du meurtre, il raconte être resté chez lui pour cause de crise soudaine d'angoisse. Sous pression lors de l’interrogatoire, il a eu beaucoup de mal à répondre aux questions posées.">Profil psychologique : Fragile, sensible</li>
+                    <li class="clickable" data-note="Alibi non vérifiable ">Alibi : Aucun</li>
                 </ul>
             </div>
+
+            <h2>Suspects</h2>
+
+<div id="add-suspect-box">
+    <input type="text" id="suspect-input" placeholder="Ajouter un suspect...">
+    <button onclick="addSuspect()">Ajouter</button>
+</div>
+
+<div class="suspects-container" id="suspect-list">
+
+    <!-- Suspect A -->
+    <div class="suspect-card">
+        <img src="https://via.placeholder.com/150x200?text=Evan+Reed">
+        <h3>Evan Reed</h3>
+        <ul>
+            <li>Âge : 25</li>
+            <li>Profession : Livreur UPS</li>
+            <li>Lien : Livraisons régulières</li>
+        </ul>
+
+        <div class="alibi-container">
+            <span class="alibi-btn" onclick="toggleAlibi(this)">➤ Alibi</span>
+            <p class="alibi-text">Evan affirme qu'il était en pause dans son camion, mais son GPS contredit légèrement ses horaires.</p>
+        </div>
+    </div>
+
+    <!-- Suspect B -->
+    <div class="suspect-card">
+        <img src="https://via.placeholder.com/150x200?text=Hannah+Leroux">
+        <h3>Hannah Leroux</h3>
+        <ul>
+            <li>Âge : 33</li>
+            <li>Profession : Voisine</li>
+            <li>Lien : Conflits légers</li>
+        </ul>
+
+        <div class="alibi-container">
+            <span class="alibi-btn" onclick="toggleAlibi(this)">➤ Alibi</span>
+            <p class="alibi-text">Elle dit être restée chez elle toute la journée, mais aucun témoin ne confirme.</p>
+        </div>
+    </div>
+
+    <!-- Suspect C -->
+    <div class="suspect-card">
+        <img src="https://via.placeholder.com/150x200?text=Jonah+Miller">
+        <h3>Jonah Miller</h3>
+        <ul>
+            <li>Âge : 17</li>
+            <li>Profession : Lycéen</li>
+            <li>Lien : Élève de la victime</li>
+        </ul>
+
+        <div class="alibi-container">
+            <span class="alibi-btn" onclick="toggleAlibi(this)">➤ Alibi</span>
+            <p class="alibi-text">Jonah affirme qu'il se promenait en forêt pour se "changer les idées".</p>
+        </div>
+    </div>
+
+</div>
 
             <!-- Suspect D - Ryan Kessler (ALIBI FAIBLE/FAUX) -->
             <div class="suspect-card">
@@ -111,7 +171,7 @@ const SUSPECTS_CONTENT = `
                 <ul>
                     <li>Profession : Propriétaire immobilier</li>
                     <li class="clickable" data-note="Madeline avait dénoncé l’état d’une de ses maisons.">Lien avec la victime : Propriétaire mécontent</li>
-                    <li class="clickable" data-note="Colérique mais organisé. L'enquête a prouvé que son alibi au restaurant était en fait pour 19h. Il avait 3 heures de battement entre 16h et 19h.">Profil psychologique : Organisé, colérique</li>
+                    <li class="clickable" data-note="Colérique mais organisé. L'enquête a prouvé que son alibi au restaurant était en fait pour 19h. Il avait 3 heures de battement entre 16h et 19h.">Profil psychologique : Organisé, colérique, cupide</li>
                     <li class="clickable" data-note="**ALERTE :** L'alibi est défectueux. Il avait le temps d'agir. Ne pas le relâcher trop vite.">Indices : Alibi défectueux !</li>
                 </ul>
             </div>
@@ -621,6 +681,12 @@ function loadPage(pageName) {
     if (pageName === 'autopsie' || pageName === 'adn') {
         checkUnlockStatus(pageName);
     }
+    if (page === "suspects") {
+    document.getElementById("add-suspect-box").style.display = "block";
+    } else {
+        document.getElementById("add-suspect-box").style.display = "none";
+    }
+
 }
 
 
@@ -638,3 +704,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // Charger la page d'accueil par défaut
     loadPage('home');
 });
+
+function toggleAlibi(element) {
+    const alibiText = element.nextElementSibling;
+    alibiText.style.display = (alibiText.style.display === "block") ? "none" : "block";
+}
+
+function addSuspect() {
+    const input = document.getElementById("suspect-input");
+    const name = input.value.trim();
+
+    if (name.toLowerCase() === "ryan kessler") {
+
+        const newSuspect = `
+        <div class="suspect-card" id="suspect-ryan">
+            <img src="https://via.placeholder.com/150x200?text=Ryan+Kessler">
+            <h3>Ryan Kessler</h3>
+            <ul>
+                <li>Âge : 42</li>
+                <li>Profession : Propriétaire immobilier</li>
+                <li>Lien : Conflit professionnel avec Madeline</li>
+            </ul>
+
+            <div class="alibi-container">
+                <span class="alibi-btn" onclick="toggleAlibi(this)">➤ Alibi</span>
+                <p class="alibi-text">Ryan était au restaurant avec plusieurs témoins. Alibi solide.</p>
+            </div>
+        </div>
+        `;
+
+        // Ajout dans la liste
+        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", newSuspect);
+
+        input.value = "";
+        alert("Suspect ajouté : Ryan Kessler");
+    }
+}

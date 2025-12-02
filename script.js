@@ -16,27 +16,99 @@ const HOME_CONTENT = `
         <p><strong>Lieu :</strong> 124, Chemin des Arbres Silencieux, banlieue Ouest.</p>
         <p><strong>Date de découverte :</strong> Vendredi 15 novembre, 17h30.</p>
         
+    
         <div class="info-section">
             <h3>Contexte de l'enquête</h3>
-            <p>Madeline Shaw, professeure d'anglais, a été retrouvée morte dans sa cuisine. Le décès est survenu par traumatisme contondant à la tête. L'arme du crime n'a pas été retrouvée sur la scène.</p>
-            <p>Le dossier de l'affaire est déjà passé dans les mains d'une équipe d'enquêteurs. Cependant, après avoir reçu des menaces, ils ont décidé d'abandonner l'affaire. C'est dans ce contexte que votre équipe de jeunes enquêteurs motivés évoluent. Vous n'avez rien à perdre et tout à prouver.</p>
-            <p>Le dossier mis à disposition est celui des enquêteurs précédents et contient des analyses et recoupement des indices. Les rapports d'autopsie et de relevé ADN ne nous sont pas encore parvenu, les équipes scientifiques sont sur le coup et travaillent d'arrache-pied pour vous donner leur résultats au plus vite.</p>
+
+            <p>
+                Madeline Shaw, professeure d’anglais de 38 ans, a été retrouvée morte dans la cuisine de sa maison. 
+                Son décès est dû à un traumatisme contondant au crâne, causé par un objet encore non identifié. 
+                Rien n’a été volé, et la scène présente des signes de lutte désorganisée.
+            </p>
+
+            <p>
+                Le dossier n’est pas vierge : une première équipe d’enquêteurs avait commencé à avancer, mais après 
+                plusieurs menaces anonymes et un cambriolage de leur véhicule de service, ils ont abandonné l’affaire. 
+                Votre équipe reprend donc les éléments déjà collectés… avec la mission d’aller jusqu’au bout.
+            </p>
+
+            <p>
+                Les rapports d’autopsie et d’analyses ADN sont encore en cours. Ils arriveront plus tard dans l’enquête, 
+                et seront déterminants pour éliminer plusieurs pistes.
+            </p>
+
+            <h3>Éléments collectés avant votre arrivée</h3>
+
+            <p>L’équipe précédente avait dressé une liste élargie de personnes potentiellement liées à la victime. 
+            Certaines pistes semblent sérieuses… d’autres beaucoup moins, mais elles font tout de même partie du dossier.</p>
+
+            <h4>Personnes listées dans le dossier initial :</h4>
+
+            <ul>
+
+                <li class="clickable" data-note="Conflits minimes : nuisances sonores, chien, parking. Aucun antécédent violent connu.">
+                    <b>Hannah Leroux</b> – Voisine directe
+                </li>
+
+                <li class="clickable" data-note="Vieil ami de la victime. Leur dispute portait sur un manuscrit qu'il voulait qu'elle relise. Caméra d’un bar confirme sa présence ailleurs.">
+                    <b>Samuel Avery</b> – Ami écrivain
+                </li>
+
+                <li class="clickable" data-note="Livreuse occasionnelle. Une caméra de rue confirme qu’elle n’était pas dans le secteur au moment du meurtre.">
+                    <b>Jessica Dawkins</b> – Chauffeuse-livreuse
+                </li>
+
+                <li class="clickable" data-note="Ex-petite amie de Jonah. Elle était jalouse de la relation élève-prof trop proche, mais elle était en internat à plus de 60 km.">
+                    <b>Chloe Hart</b> – Lycéenne
+                </li>
+
+                <li class="clickable" data-note="Élève fragile émotionnellement. La victime était un soutien important pour lui. Aucun motif clair, mais comportement instable.">
+                    <b>Jonah Miller</b> – Élève de Madeline
+                </li>
+
+                <li class="clickable" data-note="Dénoncé par la victime pour l’état de ses locations. Mobile financier possible mais profil plus organisé que la scène ne le suggère.">
+                    <b>Ryan Kessler</b> – Promoteur immobilier
+                </li>
+
+                <li class="clickable" data-note="Collègue enseignant qui s’opposait parfois à Madeline sur des choix pédagogiques. Aucun antécédent violent. Était en voyage scolaire.">
+                    <b>Paul Brenner</b> – Professeur d’histoire
+                </li>
+
+                <li class="clickable" data-note="Étudiant turbulent renvoyé par la victime l’an dernier. Le dossier note qu’il était à un tournoi de basket le jour J.">
+                    <b>Liam Cooper</b> – Ancien élève
+                </li>
+
+                <li class="clickable" data-note="Livreur souvent présent dans le quartier. Trois témoins confirment qu’il discutait parfois un peu trop longtemps avec la victime.">
+                    <b>Evan Reed</b> – Livreur UPS
+                </li>
+
+                <li class="clickable" data-note="Propriétaire d’un chat que la victime nourrissait régulièrement. Aucun mobile. Elle l’aimait beaucoup et l’aidait souvent.">
+                    <b>Margaret Ellis</b> – Voisine âgée
+                </li>
+
+            </ul>
+
+            <p>
+                Certaines de ces personnes n'ont aucun lien direct avec le meurtre mais ont été mentionnées dans 
+                divers témoignages, rumeurs ou signalements. Il appartient à votre équipe d’enquête de faire le tri, 
+                d'écarter les fausses pistes et de concentrer les efforts sur les suspects pertinents.
+            </p>
+
         </div>
+
 
         <div>
             <h2>Témoin : Arthur "Art" Gladstone</h2>
 
             <div class="info-section">
-                <p>Arthur Gladstone, 72 ans, est le voisin qui a alerté la police. Les élèves peuvent cliquer sur les éléments ci-dessous pour obtenir ses observations détaillées.</p>
+                <p>Arthur Gladstone, 72 ans, est le voisin qui a alerté la police.</p>
 
                 <ul>
-                    <li class="clickable" data-note="Arthur a vu un homme immobile devant la maison jeudi soir → probable Evan Reed. Il portait un uniforme marron.">Homme immobile jeudi soir (avant le meurtre)</li>
-                    <li class="clickable" data-note="Un bruit brusque vendredi vers 16h, probablement la lampe ou la plante renversée. Heure estimée du meurtre : 16h00 - 16h30.">Bruit brusque vendredi (jour du meurtre)</li>
+                    <li class="clickable" data-note="Arthur a vu un homme immobile devant la maison jeudi soir.">Homme immobile jeudi soir (avant le meurtre)</li>
+                    <li class="clickable" data-note="Un bruit brusque vendredi vers 16h. Heure estimée du meurtre : 16h00 - 16h30.">Bruit brusque vendredi (jour du meurtre)</li>
                     <li class="clickable" data-note="Il a vu une silhouette sortir par la porte arrière, trop vite pour identifier → suspect potentiel.">Silhouette sortie par la porte arrière</li>
                     <li class="clickable" data-note="Aucun véhicule n’a démarré, donc le suspect est probablement parti à pied.">Aucun véhicule aperçu (départ du suspect)</li>
                 </ul>
-
-                <p>Les élèves peuvent utiliser ces observations pour **recouper avec la scène de crime, les suspects et les indices ADN**.</p>
             </div>
 
             <div class="info-section">
@@ -52,8 +124,8 @@ const HOME_CONTENT = `
                 <h3>Instructions pour les Joueurs</h3>
                 <ul>
                     <li>Utilisez le menu ci-dessus pour naviguer dans les éléments du dossier.</li>
-                    <li>Cherchez les éléments "cliquables" (texte en bleu) pour révéler des notes confidentielles laissée par les enquêteurs précédents, qui peuvent vous donner des indices ou des informations complémentaires (ou non !).</li>
-                    <li>Recoupez les informations des Suspects, de la Scène de crime et des Témoins pour identifier l'auteur du crime.</li>
+                    <li>Cherchez les éléments "cliquables" (texte en bleu) pour révéler des notes laissées par les enquêteurs précédents, qui peuvent vous donner des indices ou des informations complémentaires (ou non !).</li>
+                    <li>Recoupez les informations des Suspects, de la Scène de crime, du Rapport d'Autopsie et des Relevés ADN pour identifier l'auteur du crime.</li>
                 </ul>
             </div>
         </div>
@@ -81,7 +153,23 @@ const VICTIME_CONTENT = `
         </div>
         <div class="info-section">
             <h3>Contexte Social</h3>
-            <p>Madeline Shaw était très apprécié par ses collègues professeurs et ses élèves. De plus, elle était bien connue dans la ville, ces articles dans la gazette locale avait de beaucoup de succès. Elle venait, d'ailleurs, de terminer un article acerbe sur les pratiques d'un promoteur local Ryan Kessler.</p>
+            <p>Madeline Shaw était très appréciée par ses collègues du lycée d’Ashland, aussi bien par les professeurs que par les élèves. Enseignante depuis plus de dix ans, elle s’était forgée une réputation solide : patiente, investie, passionnée par la littérature et toujours disponible pour accompagner les élèves en difficulté.
+            Son implication lui avait notamment valu la reconnaissance de Jonah Miller, un élève fragile que la professeure aidait régulièrement. </p>
+
+            <p>Au sein de l’établissement, plusieurs collègues partageaient une relation amicale avec elle. Paul Brenner, professeur d’histoire, échangeait souvent avec elle sur les événements culturels locaux et les projets pédagogiques. Claire Benton, documentaliste du lycée, appréciait son engagement auprès des élèves et collaborait fréquemment avec elle pour les clubs lecture ou les ateliers d’écriture.</p>
+
+            <p>Beaucoup de résidents de la ville connaissaient aussi Madeline grâce à ses chroniques publiées dans la Gazette d’Ashland, un journal local dans lequel elle écrivait des articles littéraires, mais aussi parfois des billets d’humeur plus acérés.
+            L’un de ses derniers articles, vivement commenté sur les réseaux locaux, dénonçait les pratiques jugées douteuses d’un promoteur immobilier de la région : Ryan Kessler. Elle y mettait en cause plusieurs négligences sur des logements insalubres, ce qui lui avait valu tension et hostilité de la part de l’homme d’affaires.</p>
+
+            <p>Madeline entretenait également de bonnes relations avec plusieurs habitants du quartier où elle vivait.
+            Sa voisine âgée, Margaret Ellis, lui demandait souvent de nourrir son chat lorsqu’elle partait rendre visite à sa famille. Plus loin dans la rue, Samuel Avery, un ami écrivain, lui faisait régulièrement lire des chapitres de ses manuscrits. Ils avaient récemment eu une dispute bénigne au sujet d’un passage qu’elle jugeait maladroit, mais rien n’indiquait une réelle animosité.</p>
+
+            <p>Malgré sa bienveillance générale, Madeline attirait aussi des personnes plus vulnérables ou instables :
+            un ancien élève turbulent, Liam Cooper, avait été renvoyé l’an dernier après un incident disciplinaire, et certains collègues estimaient qu’elle « prenait trop à cœur les détresses émotionnelles » de certains étudiants, ce qui aurait pu créer des dépendances psychologiques chez eux.</p>
+
+            <p>Au lycée, des rumeurs circulaient également selon lesquelles Chloe Hart, l’ex-petite amie de Jonah, vivait mal la proximité entre le jeune homme et la professeure, même si la piste semble mince.</p>
+
+            <p>Enfin, plusieurs habitants rapportent qu’elle attirait parfois “des inconnus un peu perdus”, des personnes en difficulté psychologique qui lui demandaient de l’aide. Le nom d’un homme, Brian Holt, un ancien patient d’un centre de réhabilitation du quartier, revient dans deux dépositions ; mais aucune interaction menaçante n’a été recensée.</p>
             <ul>
                 <li class="clickable" data-note="Indice pour l'enquête : elle n'était pas mariée, pas d'enfants. Ses bénéficiaires sont des associations.">Situation familiale : Célibataire.</li>
 
@@ -122,15 +210,15 @@ const SCENE_CONTENT = `
 
     <div>
 
-        <div id="autopsie-locked" class="report-locked">
+        <div id="scene-locked" class="report-locked">
                 <h3>ACCÈS RESTREINT</h3>
                 <p>Ce rapport contient des informations sensibles. Un code de sécurité est nécessaire pour y accéder.</p>
-                <input type="text" id="unlock-code-autopsie" placeholder="Entrez le code de déverrouillage">
-                <button id="unlock-btn-autopsie" onclick="attemptUnlock('scene', SCENE_CODE)">Déverrouiller</button>
-                <p id="unlock-message-autopsie" style="color: #ff7f7f; margin-top: 10px;"></p>
+                <input type="text" id="unlock-code-scene" placeholder="Entrez le code de déverrouillage">
+                <button id="unlock-btn-scene" onclick="attemptUnlock('scene', SCENE_CODE)">Déverrouiller</button>
+                <p id="unlock-message-scene" style="color: #ff7f7f; margin-top: 10px;"></p>
         </div>
         
-        <div id="autopsie-content-unlocked" class="report-content" style="display: none;">
+        <div id="scene-content-unlocked" class="report-content" style="display: none;">
 
 
             <div class="scene-table-container">
@@ -496,14 +584,6 @@ function activateClickableElements() {
         el.removeEventListener('click', showNote);
         el.addEventListener('click', showNote);
     });
-
-    // Éléments de la Map (area) - Le listener est sur l'image elle-même
-    const sceneImage = document.getElementById('content').querySelector('.scene-image img');
-    if (sceneImage) {
-        // IMPORTANT: Supprimer l'ancien listener pour éviter l'exécution multiple
-        sceneImage.removeEventListener('click', handleMapClick); 
-        sceneImage.addEventListener('click', handleMapClick);
-    }
 }
 
 
@@ -579,8 +659,7 @@ function loadPage(pageName) {
         notePoliceDiv.classList.remove('active-note');
     } 
     
-    // Activer les listeners pour les éléments cliquables sur la nouvelle page chargée
-    activateClickableElements();
+    
 
     // Vérifier l'état de déverrouillage au chargement de la page si nécessaire
     if (pageName === 'autopsie' || pageName === 'adn' || pageName === 'scene') {
@@ -592,6 +671,9 @@ function loadPage(pageName) {
     } else {
         document.getElementById("add-suspect-box").style.display = "none";
     }
+
+    // Activer les listeners pour les éléments cliquables sur la nouvelle page chargée
+    activateClickableElements();
 
 }
 
@@ -633,7 +715,7 @@ const SUS_A =  `
 
                 <div class="alibi-container">
                     <span class="alibi-btn" onclick="toggleAlibi(this)">➤ Alibi</span>
-                    <p class="alibi-text">Evan affirme qu'il était en pause dans son camion, mais son GPS contredit légèrement ses horaires.</p>
+                    <p class="alibi-text clickable" data-note="Alibi faible mais cohérent avec ses horaires de pause.">Evan affirme qu'il était en pause dans son camion, mais son GPS contredit légèrement ses horaires.</p>
                 </div>
             </div>
         `;
@@ -736,6 +818,8 @@ function addSuspect() {
         input.value = "";
         alert("Suspect ajouté : Ryan Kessler");
     }
+    activateClickableElements();
+
 }
 
 function openHistoriqueLivraisons() {

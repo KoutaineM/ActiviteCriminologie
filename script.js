@@ -174,7 +174,7 @@ const VICTIME_CONTENT = `
                 <li class="clickable" data-note="Indice pour l'enquête : elle n'était pas mariée, pas d'enfants. Ses bénéficiaires sont des associations.">Situation familiale : Célibataire.</li>
 
                 <li class="clickable" 
-                data-note="Ses habitudes : Café au lait tous les matins, promenades dans le parc municipal et acheter son pain chez la boulangère. Elle avait aussi l'habitude de commander ces livres par Internet puis de se les faire livrer.">
+                data-note="Ses habitudes : Tisanes dans l'après-midi, promenades quotidiennes dans le parc municipal et acheter son pain tous les matins chez la boulangère. Elle avait aussi l'habitude de commander ces livres par Internet puis de se les faire livrer.">
                 Habitudes : Très régulières —
                 <span class="inline-link" onclick="openHistoriqueLivraisons()">Historique des livraisons</span>
 </li>
@@ -225,67 +225,127 @@ const SCENE_CONTENT = `
 
                 <h3>Inventaire des preuves retrouvées</h2>
 
-                <table class="scene-table">
+                <table class="indices-table">
                     <thead>
                         <tr>
-                            <th>Objet / Indice</th>
-                            <th>Description</th>
-                            <th>Notes de Police</th>
+                            <th>Code Preuve</th>
+                            <th>Élément</th>
+                            <th>Localisation</th>
+                            <th>Analyse des Experts</th>
                         </tr>
                     </thead>
-
                     <tbody>
+
+                        <!-- Fusion : Lampe -->
                         <tr>
-                            <td>Lampe renversée</td>
-                            <td>Lampadaire brisé, trace de choc récente sur un des angles.</td>
-                            <td class="clickable" data-note="Lampe renversée : trace de choc au sol. L'objet a pu être utilisé comme arme. Les fragments de verre portent des micro-traces correspondant à l’impact.">
-                                Voir note
+                            <td>I-001A</td>
+                            <td>Lampe sur pied (brisée)</td>
+                            <td>Salon (près du corps)</td>
+                            <td class="clickable" data-note="Lampadaire brisé avec trace de choc récente sur un angle. Compatible avec les blessures de la victime. L'objet a pu être utilisé comme arme. Des micro-traces de verre sont présentes.">
+                                Compatible avec arme du crime.
                             </td>
                         </tr>
 
+                        <!-- Fusion : Pile de livres -->
                         <tr>
-                            <td>Pile de livres</td>
-                            <td>Livres tombés au sol près du canapé, désordre localisé uniquement à cet endroit.</td>
-                            <td class="clickable" data-note="Pile de livres renversée : signe de lutte impulsive ou bousculade. Aucun vol n’a été constaté.">
-                                Voir note
+                            <td>I-001B</td>
+                            <td>Pile de livres renversée</td>
+                            <td>Salon</td>
+                            <td class="clickable" data-note="Livres tombés au sol près du canapé. Signe de lutte impulsive ou d'une bousculade. Aucun vol constaté.">
+                                Indice de lutte désorganisée.
                             </td>
                         </tr>
 
+                        <!-- Fusion : Plante brisée -->
                         <tr>
-                            <td>Plante brisée</td>
-                            <td>Pots renversés, terre projetée dans un rayon de 30 cm.</td>
-                            <td class="clickable" data-note="Deux plantes brisées sur sept : indique des mouvements brusques dans le salon. Terre fine utile pour analyse trace.">
-                                Voir note
+                            <td>I-002T</td>
+                            <td>Plante brisée + terre fine</td>
+                            <td>Sous la table + sol salon</td>
+                            <td class="clickable" data-note="Deux plantes brisées sur sept. Terre projetée sur 30 cm. Terre compatible avec jardinières du quartier (y compris maison de la victime et d’Evan Reed).">
+                                Mouvement brusque + terre analysée.
                             </td>
                         </tr>
 
+                        <!-- Fusion : Mug cassé -->
                         <tr>
-                            <td>Mug cassé</td>
-                            <td>Mug fracturé sous la table, éclats dans un rayon d’un mètre.</td>
-                            <td class="clickable" data-note="Mug cassé : geste impulsif. Aucun ADN d’un tiers retrouvé. Objet appartenant à la victime.">
-                                Voir note
+                            <td>I-004V</td>
+                            <td>Mug en céramique (cassé)</td>
+                            <td>Sous la table du salon</td>
+                            <td class="clickable" data-note="Mug fracturé, éclats dans un rayon d’un mètre. Objet de la victime. Aucun ADN d’un tiers. Signe d’un geste impulsif.">
+                                Mug brisé lors de la lutte.
                             </td>
                         </tr>
 
+                        <!-- Fusion : Porte arrière -->
                         <tr>
+                            <td>I-003P</td>
+                            <td>Porte arrière non verrouillée</td>
                             <td>Porte arrière</td>
-                            <td>Porte non fermée correctement, sol extérieur boueux.</td>
-                            <td class="clickable" data-note="Porte arrière mal fermée : utilisée comme voie de fuite par le tueur. Le témoin a aperçu une silhouette sortir précipitamment par là.">
-                                Voir note
+                            <td class="clickable" data-note="Porte mal fermée, sol boueux à l'extérieur. Probable voie de fuite du tueur. Le témoin a vu une silhouette sortir par cette porte.">
+                                Voie de fuite probable.
+                            </td>
+                        </tr>
+
+                        <!-- Fusion : Empreinte -->
+                        <tr>
+                            <td>I-003E</td>
+                            <td>Empreinte de chaussure (taille 42)</td>
+                            <td>Boue extérieure (porte arrière)</td>
+                            <td class="clickable" data-note="Semelle standard. Taille 42. Compatible avec plusieurs suspects. Corroboré par le témoin.">
+                                Indice non discriminant.
+                            </td>
+                        </tr>
+
+                        <!-- Fusion : Bouton UPS -->
+                        <tr>
+                            <td>I-006C</td>
+                            <td>Bouton d'uniforme UPS</td>
+                            <td>Boue extérieure, porte arrière</td>
+                            <td class="clickable" data-note="Bouton UPS arraché lors d’une fuite. Modèle identique à celui d'Evan Reed. Correspond au récit du témoin.">
+                                Lien matériel direct avec Evan Reed.
+                            </td>
+                        </tr>
+
+                        <!-- Fusion : Éraflures cutanées -->
+                        <tr>
+                            <td>I-005S</td>
+                            <td>Éraflures cutanées (prélèvement ADN)</td>
+                            <td>Avant-bras droit de la victime</td>
+                            <td class="clickable" data-note="Éraflures indiquant un mouvement de défense. ADN prélevé : correspond à Evan Reed.">
+                                Preuve de défense de la victime.
+                            </td>
+                        </tr>
+
+                        <!-- Synthèse Unité Technique intégrée en éléments matériels -->
+                        <tr>
+                            <td>I-007X</td>
+                            <td>Absence de l’arme du crime</td>
+                            <td>Scène globale</td>
+                            <td class="clickable" data-note="L’arme du crime a été emportée par le tueur. Confirme une fuite rapide mais consciente.">
+                                Arme non retrouvée.
                             </td>
                         </tr>
 
                         <tr>
-                            <td>Bouton d’uniforme UPS</td>
-                            <td>Bouton arraché retrouvé dans la boue près de la porte arrière.</td>
-                            <td class="clickable" data-note="INDICE CRUCIAL : Bouton d’uniforme UPS, modèle identique à ceux portés par Evan Reed. Correspond au récit du témoin qui mentionne une silhouette masculine fuyant.">
-                                Voir note
+                            <td>I-008A</td>
+                            <td>Piste d’accès possible</td>
+                            <td>Porte arrière / porte non verrouillée</td>
+                            <td class="clickable" data-note="Le tueur connaissait probablement la maison. Effraction non nécessaire.">
+                                Entrée facile.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>I-009N</td>
+                            <td>Nouvel objet étranger (à analyser)</td>
+                            <td>Zone de fuite extérieure</td>
+                            <td class="clickable" data-note="Petit objet non identifié retrouvé près de la porte arrière. Voir Indice I-006 pour lien potentiel.">
+                                Piste supplémentaire.
                             </td>
                         </tr>
 
                     </tbody>
                 </table>
-
             </div>
 
 
@@ -298,8 +358,17 @@ const SCENE_CONTENT = `
                     <li class="clickable" data-note="Un petit objet étranger a été trouvé près de la zone de fuite. Voir la carte et la section Indices pour le détail.">Nouvelle piste découverte (Indice I-006).</li>
                 </ul>
             </div>
+
+        <div>
+
+        <div class="info-section">
+            <h3>Piste à Explorer</h3>
+            <p class="clickable" data-note="L'ensemble des indices matériels (Lampe brisée, Terre, Empreinte et Bouton) est cohérent avec une intrusion rapide et une agression impulsive, puis une fuite par la porte arrière."></p>
+        </div>
+        
         </div>
     </div>
+</div>
 `;
 
 
@@ -314,32 +383,32 @@ const CHRONOLOGIE_CONTENT = `
             <!-- Timeline -->
             <div class="timeline-wrapper">
                 <ul>
-                    <li class="clickable timeline-item" data-note="Jeudi soir : Arthur Gladstone aperçoit un homme immobile devant la maison → probable Evan Reed (Livreur) en uniforme.">
-                        <span class="timeline-time">Jeu. Soir (23h00)</span> : Observation du voisin
+                    <li class="clickable timeline-item" data-note="Jeudi soir : Arthur Gladstone aperçoit un homme immobile devant la maison">
+                        <span class="timeline-time">Jeu. Soir (23h00)</span>Observation du voisin
                     </li>
                     <li class="clickable timeline-item" data-note="Vendredi matin : Madeline aperçue au supermarché, rentre chez elle. Dernière trace de vie certaine.">
-                        <span class="timeline-time">Ven. Matin</span> : Activité de la victime
+                        <span class="timeline-time">Ven. Matin</span>Activité de la victime
                     </li>
-                    <li class="clickable timeline-item highlight" data-note="Vendredi entre 15h45 et 17h00 : Heure estimée par l'autopsie et le témoignage du bruit. C'est la fenêtre de temps critique.">
-                        <span class="timeline-time">Ven. 15h45 - 17h00</span> : DÉCÈS DE MADELINE SHAW
+                    <li class="clickable timeline-item highlight" data-note="Vendredi entre 15h45 et 17h00 : Heure estimée par le témoignage du bruit. C'est la fenêtre de temps critique.">
+                        <span class="timeline-time">Ven. 15h45 - 17h00</span>DÉCÈS DE MADELINE SHAW
                     </li>
-                    <li class="clickable timeline-item" data-note="Vendredi vers 16h : bruit brusque signalé par le voisin (Hannah Leroux le confirme) → lampe ou plante renversée sur la scène de crime.">
-                        <span class="timeline-time">Ven. ~16h00</span> : Bruit suspect
+                    <li class="clickable timeline-item" data-note="Vendredi vers 16h : bruit brusque signalé par le voisin (Hannah Leroux le confirme).">
+                        <span class="timeline-time">Ven. ~16h00</span>Bruit suspect
                     </li>
                     <li class="clickable timeline-item" data-note="Vendredi fin d’après-midi : Voisin appelle la police après avoir remarqué la porte arrière mal fermée et l'absence de la victime.">
-                        <span class="timeline-time">Ven. 17h30</span> : Découverte du corps et appel à la police
+                        <span class="timeline-time">Ven. 17h30</span>Découverte du corps et appel à la police
                     </li>
-                    <li class="clickable timeline-item" data-note="Samedi : scène de crime sécurisée et premiers relevés. L'ADN Inconnu A est prélevé. L'indice I-006 (bouton) est trouvé près de la porte arrière.">
-                        <span class="timeline-time">Samedi</span> : Sécurisation et relevés initiaux
+                    <li class="clickable timeline-item" data-note="Samedi : scène de crime sécurisée et premiers relevés. Des traces d'ADN sont prélevées.">
+                        <span class="timeline-time">Samedi</span>Sécurisation et relevés initiaux
                     </li>
                     <li class="clickable timeline-item" data-note="Dimanche : prélèvements ADN et analyses d’indices (Terre, Mug, Bouton) envoyés au laboratoire. Début de l'identification de l'ADN Inconnu A.">
-                        <span class="timeline-time">Dimanche</span> : Prélèvements ADN & Indices
+                        <span class="timeline-time">Dimanche</span>Prélèvements ADN & Indices
                     </li>
-                    <li class="clickable timeline-item" data-note="Lundi : résultats d’autopsie disponibles → traumatisme crânien et heure précise du décès.">
-                        <span class="timeline-time">Lundi</span> : Résultats d'Autopsie
+                    <li class="clickable timeline-item" data-note="Jeudi dans la journée : résultats d’autopsie disponibles">
+                        <span class="timeline-time">Jeudi</span>Résultats d'Autopsie
                     </li>
-                    <li class="clickable timeline-item" data-note="Mardi : résultats ADN reçus. Evan Reed devient le suspect principal.">
-                        <span class="timeline-time">Mardi</span> : Résultats ADN
+                    <li class="clickable timeline-item" data-note="Jeudi Prochain : résultats ADN reçus. Vous êtes des enquêteurs débutants, votre enquête n'est pas prioritaire d'où le temps d'attente pour les relevés ADN">
+                        <span class="timeline-time">Jeudi Prochain</span>Résultats ADN
                     </li>
                 </ul>
             </div>
@@ -474,67 +543,155 @@ const ADN_CONTENT = `
 
 
 // Contenu de la page Indices (AJOUT DE L'INDICE CRUCIAL)
-const INDICES_CONTENT = `
-    <div>
-        <h2>Synthèse des Indices Matériels</h2>
-        <p>Ce rapport rassemble et détaille l'analyse des indices prélevés sur la scène du crime. Le recoupement des indices mène directement au suspect principal.</p>
+const PROFIL_CONTENT = `
+<div class="report-content">
 
-        <div class="indices-table-wrapper">
-            <table class="indices-table">
-                <thead>
-                    <tr>
-                        <th>Code Indice</th>
-                        <th>Élément</th>
-                        <th>Localisation</th>
-                        <th>Analyse des Experts</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>I-001A</td>
-                        <td>Lampe sur pied (brisée)</td>
-                        <td>Salon (près du corps)</td>
-                        <td class="clickable" data-note="Objet contondant, compatible avec les blessures de la victime (voir Autopsie). Contient des traces d'ADN étranger non-identifié à ce stade (voir ADN).">Objet potentiellement utilisé comme arme.</td>
-                    </tr>
-                    <tr>
-                        <td>I-002T</td>
-                        <td>Terre fine (échantillon)</td>
-                        <td>Sous la table du salon, près de la plante brisée.</td>
-                        <td class="clickable" data-note="Le type de terre correspond aux jardinières des maisons de la rue, y compris la maison de la victime et celle d'Evan Reed (suspect).">Type de terre commun à la zone.</td>
-                    </tr>
-                    <tr>
-                        <td>I-003E</td>
-                        <td>Empreinte de chaussure</td>
-                        <td>Sol boueux près de la porte arrière.</td>
-                        <td class="clickable" data-note="Taille 42. Marque de semelle standard. Compatible avec le témoin qui a vu une silhouette s'échapper.">Compatible avec plusieurs suspects.</td>
-                    </tr>
-                    <tr>
-                        <td>I-004V</td>
-                        <td>Mug en céramique (cassé)</td>
-                        <td>Sous une table du salon.</td>
-                        <td class="clickable" data-note="Mug de la victime. Aucune trace d'ADN étranger. Indique un mouvement brusque ou une lutte.">Objet de la victime, brisé lors de la lutte.</td>
-                    </tr>
-                    <tr>
-                        <td>I-005S</td>
-                        <td>Éraflures cutanées (prélèvement)</td>
-                        <td>Avant-bras droit de la victime.</td>
-                        <td class="clickable" data-note="Indique un mouvement de défense. Le prélèvement ADN est envoyé au laboratoire. (Résultat : ADN Evan Reed)">Preuve de légitime défense de la victime.</td>
-                    </tr>
-                    <tr>
-                        <td>I-006C</td>
-                        <td>Bouton d'uniforme</td>
-                        <td>Porte arrière (boue extérieure).</td>
-                        <td class="clickable" data-note="Bouton d'uniforme de la compagnie de messagerie UPS. Evan Reed est livreur UPS. Ce bouton a été arraché lors de sa fuite par l'arrière. Preuve matérielle de sa présence.">Lien direct avec le suspect Evan Reed.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+    <h2>Profils Psychologiques des Criminels</h2>
+    <p>Cette section présente les grands profils de tueurs étudiés par les experts en criminologie. 
+    Elle vous permettra de mieux comprendre les comportements, les réactions en interrogatoire et les motivations possibles
+    des suspects de l’affaire Madeline Shaw.</p>
 
-        <div class="info-section">
-            <h3>Piste à Explorer</h3>
-            <p class="clickable" data-note="L'ensemble des indices matériels (Lampe brisée, Terre, Empreinte et Bouton) est cohérent avec une intrusion rapide et une agression impulsive, puis une fuite par la porte arrière.">Recouper les indices de la scène avec le profil psychologique d'Evan Reed.</p>
-        </div>
+    <!-- PROFIL 1 : Tueur Irrationnel -->
+    <div class="info-section">
+        <h3>1. Le Tueur Irrationnel / Impulsif</h3>
+        <ul>
+            <li class="clickable" data-note="Le tueur impulsif agit sous l’effet d’une émotion intense : colère, peur, humiliation.">
+                Profil général : passage à l’acte soudain, sans planification.
+            </li>
+            <li class="clickable" data-note="Le tueur impulsif peut exploser suite à un rejet, une remarque blessante ou un stress extrême.">
+                Déclencheurs : rejet, crise émotionnelle, perte de contrôle.
+            </li>
+            <li class="clickable" data-note="Ce profil laisse souvent beaucoup d’indices : objets renversés, ADN, empreintes.">
+                Indices matériels : désordre, fuite précipitée, traces multiples.
+            </li>
+            <li class="clickable" data-note="Arme improvisée : lampes, objets du quotidien, outils trouvés sur place.">
+                Armes typiques : objets trouvés sur les lieux.
+            </li>
+            <li class="clickable" data-note="Contradictions fréquentes, agitation, difficulté à soutenir une version stable.">
+                Réaction en interrogatoire : nerveux, incohérent, peut s’emporter.
+            </li>
+            <li class="clickable" data-note="Il est incapable de dissimuler totalement les preuves, ce qui le trahit.">
+                Faiblesses : beaucoup de preuves laissées.
+            </li>
+        </ul>
     </div>
+
+
+    <!-- PROFIL 2 : Tueur Rationnel -->
+    <div class="info-section">
+        <h3>2. Le Tueur Rationnel / Calculateur (Motif financier)</h3>
+        <ul>
+            <li class="clickable" data-note="Le tueur rationnel agit par intérêt : argent, réputation, carrière.">
+                Profil général : méthodique, organisé, motivé par un gain.
+            </li>
+            <li class="clickable" data-note="Il agit s’il estime que la victime représente une menace à ses finances ou à son image.">
+                Motifs : conflits financiers, réputation menacée.
+            </li>
+            <li class="clickable" data-note="Ce profil essaie souvent d’effacer ses traces : entrée discrète, arme retirée, scène nettoyée.">
+                Indices matériels : traces minimisées ou camouflées.
+            </li>
+            <li class="clickable" data-note="En général, il utilise une arme qu’il a déjà ou qu’il sait manier efficacement.">
+                Armes typiques : objets lourds, outils, armes retirées ensuite.
+            </li>
+            <li class="clickable" data-note="Calme, confiant, peut dévier les questions et manipuler subtilement.">
+                Interrogatoire : maîtrise de soi, comportements calculés.
+            </li>
+            <li class="clickable" data-note="Les mensonges préparés peuvent sembler trop parfaits, ce qui les rend suspects.">
+                Faiblesses : incohérences temporelles, excès de self-control.
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- PROFIL 3 : Tueur Emotionnel -->
+    <div class="info-section">
+        <h3>3. Le Tueur Émotionnel / Dépendant Affectif</h3>
+        <ul>
+            <li class="clickable" data-note="Le tueur émotionnel est très sensible à l’abandon et au rejet.">
+                Profil général : hyper-émotif, dépendant.
+            </li>
+            <li class="clickable" data-note="Une dispute, un refus ou une parole blessante peut déclencher une crise.">
+                Déclencheurs : rejet, jalousie, sentiment de trahison.
+            </li>
+            <li class="clickable" data-note="La scène montre souvent des signes d’une dispute ou d’un acte non prémédité.">
+                Indices matériels : désordre émotionnel, objets personnels perturbés.
+            </li>
+            <li class="clickable" data-note="Il utilise souvent une arme liée au contexte ou à la relation.">
+                Armes typiques : objets symboliques ou improvisés.
+            </li>
+            <li class="clickable" data-note="Peut pleurer, paniquer ou se contredire, même s'il est innocent.">
+                Interrogatoire : stress intense, incohérence.
+            </li>
+            <li class="clickable" data-note="Influencé par les émotions, peut avouer même s'il n'est pas coupable.">
+                Faiblesses : confusion entre faits et émotions.
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- PROFIL 4 : Tueur Inopiné -->
+    <div class="info-section">
+        <h3>4. Le Tueur Inopiné / Accidental</h3>
+        <ul>
+            <li class="clickable" data-note="Le meurtre est souvent l’aboutissement d’une dispute banale qui dégénère.">
+                Profil général : geste accidentel, perte de contrôle momentanée.
+            </li>
+            <li class="clickable" data-note="Une remarque, un geste brusque ou une frustration accumulée peuvent suffire.">
+                Déclencheurs : irritabilité, tensions quotidiennes.
+            </li>
+            <li class="clickable" data-note="La scène montre souvent un coup unique, mal dirigé, et peu de camouflage.">
+                Indices matériels : incohérence, arme improvisée.
+            </li>
+            <li class="clickable" data-note="L’arme est généralement un objet quotidien attrapé dans l'énervement.">
+                Armes typiques : objets domestiques.
+            </li>
+            <li class="clickable" data-note="Elle peut minimiser les faits, nier s’être disputée ou changer de version.">
+                Interrogatoire : défensive, nerveuse.
+            </li>
+            <li class="clickable" data-note="Très sensible aux questions calmes, elle peut se contredire sous pression.">
+                Faiblesses : mémoire floue, version instable.
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- PROFIL 5 : Opportuniste -->
+    <div class="info-section">
+        <h3>5. Le Tueur Opportuniste</h3>
+        <p>Profil sans lien personnel avec la victime, mais profitant d’une situation favorable.</p>
+        <ul>
+            <li class="clickable" data-note="Il agit car une opportunité se présente, comme une porte ouverte ou une maison vide.">
+                Profil général : passage à l’acte pratique.
+            </li>
+            <li class="clickable" data-note="Ce type ne connaît pas la victime, ce qui réduit les motivations complexes.">
+                Motivation : opportunité, vol, avantage immédiat.
+            </li>
+            <li class="clickable" data-note="Armes trouvées sur place, comportement rapide et direct.">
+                Armes et scène : simple, peu émotionnelle.
+            </li>
+        </ul>
+    </div>
+
+
+    <!-- PROFIL 6 : Prédateur Manipulateur -->
+    <div class="info-section">
+        <h3>6. Le Tueur Manipulateur / Prédateur</h3>
+        <ul>
+            <li class="clickable" data-note="Calme, calculateur, maîtrise totale des émotions. Difficulté à être déstabilisé.">
+                Profil général : contrôle extrême.
+            </li>
+            <li class="clickable" data-note="Il peut apparaître très innocent grâce à un comportement parfait.">
+                Danger : semble "trop propre".
+            </li>
+            <li class="clickable" data-note="Réponses structurées, regard direct, confiance totale.">
+                Interrogatoire : difficile à piéger.
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+    
 `;
 
 
@@ -548,7 +705,7 @@ const pages = {
     'adn': ADN_CONTENT,
     'chronologie': CHRONOLOGIE_CONTENT,
     'interrogatoires': INTERROGATOIRES_CONTENT,
-    'indices': INDICES_CONTENT,
+    'profil': PROFIL_CONTENT,
 };
 
 

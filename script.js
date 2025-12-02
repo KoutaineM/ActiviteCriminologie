@@ -425,6 +425,20 @@ const INTERROGATOIRES_CONTENT = `
         <div class="interrogatoire-container">
 
             <div class="info-section">
+                <h3>Consignes de l'interrogatoire</h3>
+                <p> Avant de commencer les interrogatoires, une préparation rigoureuse est indispensable. Pour qu’un interrogatoire soit autorisé, deux conditions doivent être réunies : </p> 
+                <ul> 
+                    <li> <strong>1ère condition :</strong> avoir réduit le nombre de suspects à deux personnes, en s’appuyant sur des éléments sérieux et recoupés <em>(liens logiques entre le contexte, les preuves matérielles, les témoignages et le profil psychologique suspecté).</em> </li>
+                    <li>
+                        <strong>2ème condition :</strong> avoir préparé une série de questions stratégiques adaptées au <strong>profil psychologique</strong> de chaque suspect retenu.  
+                        Ces questions doivent être conçues pour observer et analyser leurs <strong>réactions émotionnelles et comportementales</strong> — et non leurs réponses factuelles, souvent trompeuses.
+                    </li>
+                </ul>
+                <p> Votre objectif n’est pas d’obtenir « une bonne réponse », mais d’identifier les signes de <strong>stress, contradiction, déstabilisation, agressivité ou fuite</strong> qui trahissent un comportement coupable. Un interrogatoire réussi repose donc sur votre capacité à anticiper les <strong>réactions possibles</strong> de chaque profil (impulsif, rationnel, émotionnel, improvisé, etc.). </p>
+
+             </div>
+
+            <div class="info-section">
                 <h3>Techniques d'Interrogatoire</h3>
                 <p>Pour mener l'interrogatoire, les enquêteurs doivent utiliser des techniques psychologiques et factuelles pour déceler la vérité et tester la cohérence des récits :</p>
 
@@ -436,18 +450,6 @@ const INTERROGATOIRES_CONTENT = `
                 </ul>
             </div>
             
-            <div class="info-section">
-                <h3>Focus Interrogatoire</h3>
-                <p>Les suspects principaux pour l'interrogatoire en direct (roleplay) sont :</p>
-                <ul>
-                    <li class="clickable" data-note="Evan Reed (Livreur) — suspect impulsif, nerveux, vu la veille. Il ment sur son emploi du temps de vendredi après-midi. Le forcer à détailler ses livraisons. **Interrogez-le sur son uniforme !**">Evan Reed</li>
-                    <li class="clickable" data-note="Hannah Leroux (Voisine) — sera trop coopérative. La mettre face au fait qu'elle n'a pas vu de voiture s'en aller (Témoin).">Hannah Leroux</li>
-                    <li class="clickable" data-note="Jonah Miller (Lycéen) — lycéen fragile, émotionnel. Ses messages de menaces sont une fausse piste (ne pas le relâcher complètement, mais se concentrer sur l'ADN).">Jonah Miller</li>
-                    <li class="clickable" data-note="Ryan Kessler (Promoteur) — Alibi défectueux ! Le forcer à détailler ses activités entre 16h et 19h.">Ryan Kessler</li>
-                </ul>
-
-                <p class="final-instruction">Les élèves doivent utiliser ces techniques pour guider leur enquête et tester les alibis des suspects. L'ADN est la clé pour relâcher les innocents.</p>
-            </div>
         </div>
     </div>
 `;

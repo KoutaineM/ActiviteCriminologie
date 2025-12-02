@@ -3,8 +3,10 @@
 // ====================================================================
 
 // --- CODES DE DÉVERROUILLAGE (à partager avec le Game Master)
-const AUTOPSIE_CODE = '851A';
-const ADN_CODE = '851B';
+const AUTOPSIE_CODE = '851AU';
+const ADN_CODE = '851AD';
+const SCENE_CODE = '851SC';
+
 
 // Contenu de la page d'accueil
 const HOME_CONTENT = `
@@ -100,8 +102,8 @@ const SUSPECTS_CONTENT = `
 <h2>Suspects Principaux</h2>
 
 <p>Quatre individus présentant un lien avec la victime ou la scène ont été identifiés par la police. Leurs profils sont mis à jour après la première série d'interrogatoires réalisée par les prédécents enquêteurs.</p>
-<p>Votre capitaine vous fait confiance pour boucler l'enquête et identifier le coupable. Cependant, il veut vous d'abord mettre au défi avant de commencer pour savoir si vous avez vraiment les épaules pour cette enquête.</p>
-<p>Il vous demande de trouver vous-même les suspects principaux en analysant les informations disponibles. Bonne chance !</p> 
+<p>Le capitaine vous a donné sa confiance pour boucler l'enquête et identifier le coupable. Cependant, il veut être sûr que vous ayez vraiment les épaules pour cette enquête.</p>
+<p>Il vous demande donc de trouver vous-même les suspects principaux en analysant les informations déjà disponibles. Bonne chance !</p> 
 
 <div id="add-suspect-box">
     <input type="text" id="suspect-input" placeholder="Ajouter un suspect...">
@@ -115,85 +117,99 @@ const SUSPECTS_CONTENT = `
 
 // Contenu de la page Scène de crime (AJOUT D'UN NOUVEL INDICE)
 const SCENE_CONTENT = `
+
+    <h2>Scène de crime : Maison de Madeline Shaw </h2>
+
     <div>
-        <h2>Scène de crime : Maison de Madeline Shaw </h2>
 
-        <div class="scene-table-container">
-
-            <h3>Inventaire des preuves retrouvées</h2>
-
-            <table class="scene-table">
-                <thead>
-                    <tr>
-                        <th>Objet / Indice</th>
-                        <th>Description</th>
-                        <th>Notes de Police</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>Lampe renversée</td>
-                        <td>Lampadaire brisé, trace de choc récente sur un des angles.</td>
-                        <td class="clickable" data-note="Lampe renversée : trace de choc au sol. L'objet a pu être utilisé comme arme. Les fragments de verre portent des micro-traces correspondant à l’impact.">
-                            Voir note
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Pile de livres</td>
-                        <td>Livres tombés au sol près du canapé, désordre localisé uniquement à cet endroit.</td>
-                        <td class="clickable" data-note="Pile de livres renversée : signe de lutte impulsive ou bousculade. Aucun vol n’a été constaté.">
-                            Voir note
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Plante brisée</td>
-                        <td>Pots renversés, terre projetée dans un rayon de 30 cm.</td>
-                        <td class="clickable" data-note="Deux plantes brisées sur sept : indique des mouvements brusques dans le salon. Terre fine utile pour analyse trace.">
-                            Voir note
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Mug cassé</td>
-                        <td>Mug fracturé sous la table, éclats dans un rayon d’un mètre.</td>
-                        <td class="clickable" data-note="Mug cassé : geste impulsif. Aucun ADN d’un tiers retrouvé. Objet appartenant à la victime.">
-                            Voir note
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Porte arrière</td>
-                        <td>Porte non fermée correctement, sol extérieur boueux.</td>
-                        <td class="clickable" data-note="Porte arrière mal fermée : utilisée comme voie de fuite par le tueur. Le témoin a aperçu une silhouette sortir précipitamment par là.">
-                            Voir note
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Bouton d’uniforme UPS</td>
-                        <td>Bouton arraché retrouvé dans la boue près de la porte arrière.</td>
-                        <td class="clickable" data-note="INDICE CRUCIAL : Bouton d’uniforme UPS, modèle identique à ceux portés par Evan Reed. Correspond au récit du témoin qui mentionne une silhouette masculine fuyant.">
-                            Voir note
-                        </td>
-                    </tr>
-
-                </tbody>
-            </table>
-
+        <div id="autopsie-locked" class="report-locked">
+                <h3>ACCÈS RESTREINT</h3>
+                <p>Ce rapport contient des informations sensibles. Un code de sécurité est nécessaire pour y accéder.</p>
+                <input type="text" id="unlock-code-autopsie" placeholder="Entrez le code de déverrouillage">
+                <button id="unlock-btn-autopsie" onclick="attemptUnlock('scene', SCENE_CODE)">Déverrouiller</button>
+                <p id="unlock-message-autopsie" style="color: #ff7f7f; margin-top: 10px;"></p>
         </div>
+        
+        <div id="autopsie-content-unlocked" class="report-content" style="display: none;">
 
 
-        <div class="info-section">
-            <h3>Synthèse de l'Unité Technique</h3>
-            <p>L'analyse de la scène indique un crime de nature impulsive et non préméditée, mais potentiellement dissimulé par une fuite organisée.</p>
-            <ul>
-                <li class="clickable" data-note="L'arme du crime n'a pas été retrouvée. Elle a été emportée par le tueur.">Arme du crime : Non présente sur la scène.</li>
-                <li class="clickable" data-note="Les indices suggèrent que le tueur connaissait la maison et n'a pas eu besoin d'entrer par effraction par la porte principale.">Accès : Possiblement par la porte arrière ou une entrée non verrouillée.</li>
-                <li class="clickable" data-note="Un petit objet étranger a été trouvé près de la zone de fuite. Voir la carte et la section Indices pour le détail.">Nouvelle piste découverte (Indice I-006).</li>
-            </ul>
+            <div class="scene-table-container">
+
+                <h3>Inventaire des preuves retrouvées</h2>
+
+                <table class="scene-table">
+                    <thead>
+                        <tr>
+                            <th>Objet / Indice</th>
+                            <th>Description</th>
+                            <th>Notes de Police</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Lampe renversée</td>
+                            <td>Lampadaire brisé, trace de choc récente sur un des angles.</td>
+                            <td class="clickable" data-note="Lampe renversée : trace de choc au sol. L'objet a pu être utilisé comme arme. Les fragments de verre portent des micro-traces correspondant à l’impact.">
+                                Voir note
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Pile de livres</td>
+                            <td>Livres tombés au sol près du canapé, désordre localisé uniquement à cet endroit.</td>
+                            <td class="clickable" data-note="Pile de livres renversée : signe de lutte impulsive ou bousculade. Aucun vol n’a été constaté.">
+                                Voir note
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Plante brisée</td>
+                            <td>Pots renversés, terre projetée dans un rayon de 30 cm.</td>
+                            <td class="clickable" data-note="Deux plantes brisées sur sept : indique des mouvements brusques dans le salon. Terre fine utile pour analyse trace.">
+                                Voir note
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Mug cassé</td>
+                            <td>Mug fracturé sous la table, éclats dans un rayon d’un mètre.</td>
+                            <td class="clickable" data-note="Mug cassé : geste impulsif. Aucun ADN d’un tiers retrouvé. Objet appartenant à la victime.">
+                                Voir note
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Porte arrière</td>
+                            <td>Porte non fermée correctement, sol extérieur boueux.</td>
+                            <td class="clickable" data-note="Porte arrière mal fermée : utilisée comme voie de fuite par le tueur. Le témoin a aperçu une silhouette sortir précipitamment par là.">
+                                Voir note
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Bouton d’uniforme UPS</td>
+                            <td>Bouton arraché retrouvé dans la boue près de la porte arrière.</td>
+                            <td class="clickable" data-note="INDICE CRUCIAL : Bouton d’uniforme UPS, modèle identique à ceux portés par Evan Reed. Correspond au récit du témoin qui mentionne une silhouette masculine fuyant.">
+                                Voir note
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+
+            <div class="info-section">
+                <h3>Synthèse de l'Unité Technique</h3>
+                <p>L'analyse de la scène indique un crime de nature impulsive et non préméditée, mais potentiellement dissimulé par une fuite organisée.</p>
+                <ul>
+                    <li class="clickable" data-note="L'arme du crime n'a pas été retrouvée. Elle a été emportée par le tueur.">Arme du crime : Non présente sur la scène.</li>
+                    <li class="clickable" data-note="Les indices suggèrent que le tueur connaissait la maison et n'a pas eu besoin d'entrer par effraction par la porte principale.">Accès : Possiblement par la porte arrière ou une entrée non verrouillée.</li>
+                    <li class="clickable" data-note="Un petit objet étranger a été trouvé près de la zone de fuite. Voir la carte et la section Indices pour le détail.">Nouvelle piste découverte (Indice I-006).</li>
+                </ul>
+            </div>
         </div>
     </div>
 `;
@@ -283,7 +299,7 @@ const INTERROGATOIRES_CONTENT = `
 // Contenu de la page Autopsie (Verrouillé par code)
 const AUTOPSIE_CONTENT = `
     <div>
-        <h2>Rapport d'Autopsie : VERROUILLÉ</h2>
+        <h2>Rapport d'Autopsie</h2>
         <div id="autopsie-locked" class="report-locked">
             <h3>ACCÈS RESTREINT</h3>
             <p>Ce rapport contient des informations sensibles. Un code de sécurité est nécessaire pour y accéder.</p>
@@ -329,7 +345,7 @@ const AUTOPSIE_CONTENT = `
 // Contenu de la page ADN (Verrouillé par code)
 const ADN_CONTENT = `
     <div>
-        <h2>Rapport d'Analyse ADN : VERROUILLÉ</h2>
+        <h2>Rapport d'Analyse ADN</h2>
         <div id="adn-locked" class="report-locked">
             <h3>ACCÈS RESTREINT</h3>
             <p>Ce rapport contient des informations sensibles. Un code de sécurité est nécessaire pour y accéder.</p>
@@ -471,64 +487,6 @@ function showNote(e) {
 }
 
 
-// Fonction pour gérer le clic sur les éléments de la carte (Image Map)
-function handleMapClick(e) {
-    e.preventDefault(); 
-    
-    const img = e.target;
-    // S'assurer que l'élément cliqué est bien l'image et qu'elle a un usemap
-    if (!img.getAttribute('usemap')) return; 
-
-    const mapName = img.getAttribute('usemap').substring(1);
-    const mapElement = document.querySelector(`map[name="${mapName}"]`);
-
-    if (mapElement) {
-        const areas = mapElement.querySelectorAll('area');
-        let closestArea = null;
-        let minDistance = Infinity;
-
-        // Calculer l'offset du clic (pour les navigateurs qui ne le fournissent pas directement)
-        const rect = img.getBoundingClientRect();
-        const scaleX = img.naturalWidth / rect.width;
-        const scaleY = img.naturalHeight / rect.height;
-        const clickX = (e.clientX - rect.left) * scaleX;
-        const clickY = (e.clientY - rect.top) * scaleY;
-
-        areas.forEach(area => {
-            const coords = area.coords.split(',').map(Number);
-            
-            // Logique de détection de clic pour les cercles
-            if (area.shape === 'circle') {
-                const [cx, cy, r] = coords;
-                const distance = Math.sqrt(Math.pow(clickX - cx, 2) + Math.pow(clickY - cy, 2));
-
-                if (distance <= r && distance < minDistance) {
-                    minDistance = distance;
-                    closestArea = area;
-                }
-            }
-            // Logique de détection de clic pour les rectangles
-            if (area.shape === 'rect') {
-                const [x1, y1, x2, y2] = coords;
-                if (clickX >= x1 && clickX <= x2 && clickY >= y1 && clickY <= y2) {
-                    closestArea = area;
-                }
-            }
-        });
-
-        if (closestArea) {
-             const note = closestArea.getAttribute('data-note');
-             if (note) {
-                 const notePoliceDiv = document.getElementById('note-police');
-                 if (notePoliceDiv) {
-                     notePoliceDiv.innerHTML = `<p><strong>Note de la Scène de Crime :</strong> ${note}</p>`;
-                     notePoliceDiv.classList.add('active-note');
-                 }
-             }
-        }
-    }
-}
-
 // Fonction pour activer les listeners sur les nouveaux éléments chargés
 function activateClickableElements() {
     // Éléments cliquables (texte, li, td)
@@ -625,11 +583,12 @@ function loadPage(pageName) {
     activateClickableElements();
 
     // Vérifier l'état de déverrouillage au chargement de la page si nécessaire
-    if (pageName === 'autopsie' || pageName === 'adn') {
+    if (pageName === 'autopsie' || pageName === 'adn' || pageName === 'scene') {
         checkUnlockStatus(pageName);
     }
-    if (page === "suspects") {
-    document.getElementById("add-suspect-box").style.display = "block";
+    if (pageName === "suspects") {
+        document.getElementById("add-suspect-box").style.display = "block";
+        loadSavedSuspects() ;
     } else {
         document.getElementById("add-suspect-box").style.display = "none";
     }
@@ -644,9 +603,12 @@ document.addEventListener('DOMContentLoaded', () => {
     window.loadPage = loadPage;
     window.AUTOPSIE_CODE = AUTOPSIE_CODE;
     window.ADN_CODE = ADN_CODE;
+    window.SCENE_CODE = SCENE_CODE;
 
+    localStorage.clear();
     localStorage.setItem(`autopsieUnlocked`, 'false');
     localStorage.setItem(`adnUnlocked`, 'false');
+    localStorage.setItem(`sceneUnlocked`, 'false');
 
     // Charger la page d'accueil par défaut
     loadPage('home');
@@ -657,13 +619,8 @@ function toggleAlibi(element) {
     alibiText.style.display = (alibiText.style.display === "block") ? "none" : "block";
 }
 
-function addSuspect() {
-    const input = document.getElementById("suspect-input");
-    const name = input.value.trim();
 
-    if (name.toLowerCase() === "evan reed") {
-
-        const newSuspect = `
+const SUS_A =  `
             <!-- Suspect A -->
             <div class="suspect-card">
                 <img src="https://via.placeholder.com/150x200?text=Evan+Reed">
@@ -681,15 +638,7 @@ function addSuspect() {
             </div>
         `;
 
-        // Ajout dans la liste
-        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", newSuspect);
-
-        input.value = "";
-        alert("Suspect ajouté : Evan Reed");
-    }
-    if (name.toLowerCase() === "hannah leroux") {
-
-        const newSuspect = `
+const SUS_B  = `
             <!-- Suspect B -->
             <div class="suspect-card">
                 <img src="https://via.placeholder.com/150x200?text=Hannah+Leroux">
@@ -707,15 +656,7 @@ function addSuspect() {
             </div>
         `;
 
-        // Ajout dans la liste
-        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", newSuspect);
-
-        input.value = "";
-        alert("Suspect ajouté : Hannah Leroux");
-    }
-    if (name.toLowerCase() === "john miller") {
-
-        const newSuspect = `
+const SUS_C = `
             <!-- Suspect C -->
             <div class="suspect-card">
                 <img src="https://via.placeholder.com/150x200?text=Jonah+Miller">
@@ -733,15 +674,7 @@ function addSuspect() {
             </div>
         `;
 
-        // Ajout dans la liste
-        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", newSuspect);
-
-        input.value = "";
-        alert("Suspect ajouté : Jonh Miller");
-    }
-        if (name.toLowerCase() === "ryan kessler") {
-
-        const newSuspect = `
+const SUS_D = `
             <!-- Suspect D -->
             <div class="suspect-card">
                 <img src="https://via.placeholder.co/150x200/151e29/4aa3ff?text=Ryan+Kessler" alt="Ryan Kessler">
@@ -759,6 +692,44 @@ function addSuspect() {
             </div>
         `;
 
+function addSuspect() {
+    const input = document.getElementById("suspect-input");
+    const name = input.value.trim();
+
+    if (name.toLowerCase() === "evan reed") {
+        const newSuspect = SUS_A ;
+
+        // Ajout dans la liste
+        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", newSuspect);
+        saveSuspect("evan reed") ;
+
+        input.value = "";
+        alert("Suspect ajouté : Evan Reed");
+    }
+    if (name.toLowerCase() === "hannah leroux") {
+        saveSuspect("hannah leroux")
+        const newSuspect = SUS_B ;
+
+        // Ajout dans la liste
+        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", newSuspect);
+
+        input.value = "";
+        alert("Suspect ajouté : Hannah Leroux");
+    }
+    if (name.toLowerCase() === "john miller") {
+        saveSuspect("john miller")
+        const newSuspect = SUS_C ; 
+
+        // Ajout dans la liste
+        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", newSuspect);
+
+        input.value = "";
+        alert("Suspect ajouté : Jonh Miller");
+    }
+        if (name.toLowerCase() === "ryan kessler") {
+        saveSuspect("ryan kessler") ;
+        const newSuspect = SUS_D;
+
         // Ajout dans la liste
         document.getElementById("suspect-list").insertAdjacentHTML("beforeend", newSuspect);
 
@@ -773,4 +744,36 @@ function openHistoriqueLivraisons() {
 
 function closePopup() {
     document.getElementById("popup-livraisons").style.display = "none";
+}
+
+function saveSuspect(name) {
+    let saved = JSON.parse(localStorage.getItem("suspects")) || [];
+    if (!saved.includes(name)) {
+        saved.push(name);
+        localStorage.setItem("suspects", JSON.stringify(saved));
+    }
+}
+
+function loadSavedSuspects() {
+    let saved = JSON.parse(localStorage.getItem("suspects")) || [];
+
+    saved.forEach(name => {
+        addSuspectFromMemory(name);
+    });
+}
+
+
+function addSuspectFromMemory(name) {
+    if (name === "evan reed") {
+        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", SUS_A);
+    }
+    if (name === "hannah leroux") {
+        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", SUS_B);
+    }
+    if (name === "john miller") {
+        document.getElementById("suspect-list").insertAdjacentHTML("beforeend",SUS_C);
+    }
+    if (name === "ryan kessler") {
+        document.getElementById("suspect-list").insertAdjacentHTML("beforeend",SUS_D);
+    }
 }

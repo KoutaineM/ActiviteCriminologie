@@ -695,6 +695,7 @@ body {
     background: #14202e;
     border: 1px solid #4aa3ff;
     cursor: pointer;
+    color: #dbe9ff;
 }
 
 .gm-popup button:hover {

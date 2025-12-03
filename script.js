@@ -58,7 +58,7 @@ const HOME_CONTENT = `
                     <b>Jessica Dawkins</b> – Chauffeuse-livreuse
                 </li>
 
-                <li class="clickable" data-note="Ex-petite amie de Jonah. Elle était jalouse de la relation élève-prof trop proche, mais elle était en internat à plus de 60 km.">
+                <li class="clickable" data-note="Ex-petite amie de John. Elle était jalouse de la relation élève-prof trop proche, mais elle était en internat à plus de 60 km.">
                     <b>Chloe Hart</b> – Lycéenne
                 </li>
 
@@ -66,7 +66,7 @@ const HOME_CONTENT = `
                     <b>Jonah Miller</b> – Élève de Madeline
                 </li>
 
-                <li class="clickable" data-note="Dénoncé par la victime pour l’état de ses locations. Mobile financier possible mais profil plus organisé que la scène ne le suggère.">
+                <li class="clickable" data-note="Dénoncé par la victime pour l’état de ses locations. Mobile financier possible.">
                     <b>Ryan Kessler</b> – Promoteur immobilier
                 </li>
 
@@ -123,12 +123,14 @@ const HOME_CONTENT = `
             <div class="info-section">
                 <h3>Instructions pour les Joueurs</h3>
                 <ul>
-                    <li>Utilisez le menu ci-dessus pour naviguer dans les éléments du dossier.</li>
-                    <li>Cherchez les éléments "cliquables" (texte en bleu) pour révéler des notes laissées par les enquêteurs précédents, qui peuvent vous donner des indices ou des informations complémentaires (ou non !).</li>
+                    <li>Utilisez le menu ci-dessus pour naviguer dans les éléments du dossier accessibles (Home, Victime, Chronologie, Suspects, Profils Psychologiques).</li>
+                    <li>Cherchez les éléments "cliquables" (texte en bleu) pour révéler des notes laissées par les enquêteurs précédents, qui peuvent vous donner des indices ou des informations complémentaires.</li>
                     <li>Recoupez les informations des Suspects, de la Scène de crime, du Rapport d'Autopsie et des Relevés ADN pour identifier l'auteur du crime.</li>
                 </ul>
             </div>
         </div>
+
+        <br>
     </div>
 `;
 
@@ -167,9 +169,9 @@ const VICTIME_CONTENT = `
             <p>Malgré sa bienveillance générale, Madeline attirait aussi des personnes plus vulnérables ou instables :
             un ancien élève turbulent, Liam Cooper, avait été renvoyé l’an dernier après un incident disciplinaire, et certains collègues estimaient qu’elle « prenait trop à cœur les détresses émotionnelles » de certains étudiants, ce qui aurait pu créer des dépendances psychologiques chez eux.</p>
 
-            <p>Au lycée, des rumeurs circulaient également selon lesquelles Chloe Hart, l’ex-petite amie de Jonah, vivait mal la proximité entre le jeune homme et la professeure, même si la piste semble mince.</p>
+            <p>Au lycée, des rumeurs circulaient également selon lesquelles Chloe Hart, l’ex-petite amie de John, vivait mal la proximité entre le jeune homme et la professeure, même si la piste semble mince.</p>
 
-            <p>Enfin, plusieurs habitants rapportent qu’elle attirait parfois “des inconnus un peu perdus”, des personnes en difficulté psychologique qui lui demandaient de l’aide. Le nom d’un homme, Brian Holt, un ancien patient d’un centre de réhabilitation du quartier, revient dans deux dépositions ; mais aucune interaction menaçante n’a été recensée.</p>
+            <p>Enfin, plusieurs habitants rapportent qu’elle attirait parfois “des inconnus un peu perdus”, des personnes en difficulté psychologique qui lui demandaient de l’aide. Le nom d’un homme, Briana Holt, une ancienne patiente d’un centre de réhabilitation du quartier, revient dans deux dépositions ; mais aucune interaction menaçante n’a été recensée.</p>
             <ul>
                 <li class="clickable" data-note="Indice pour l'enquête : elle n'était pas mariée, pas d'enfants. Ses bénéficiaires sont des associations.">Situation familiale : Célibataire.</li>
 
@@ -190,8 +192,8 @@ const SUSPECTS_CONTENT = `
 <h2>Suspects Principaux</h2>
 
 <p>Quatre individus présentant un lien avec la victime ou la scène ont été identifiés par la police. Leurs profils sont mis à jour après la première série d'interrogatoires réalisée par les prédécents enquêteurs.</p>
-<p>Le capitaine vous a donné sa confiance pour boucler l'enquête et identifier le coupable. Cependant, il veut être sûr que vous ayez vraiment les épaules pour cette enquête.</p>
-<p>Il vous demande donc de trouver vous-même les suspects principaux en analysant les informations déjà disponibles. Bonne chance !</p> 
+<p>Le capitaine vous a donné sa confiance pour boucler l'enquête et identifier le coupable. Cependant, il veut être sûr que vous ayez vraiment les épaules pour réaliser la suite : l'Interrogatoire, la Scène de Crime et le Dossier d'Autopsie.</p>
+<p>Il vous demande donc de trouver vous-même les 4 suspects principaux en analysant les informations déjà disponibles. Bonne chance !</p> 
 
 <div id="add-suspect-box">
     <input type="text" id="suspect-input" placeholder="Ajouter un suspect...">
@@ -200,6 +202,7 @@ const SUSPECTS_CONTENT = `
 
 <div class="suspects-container" id="suspect-list">
 </div>
+
 `;
 
 
@@ -451,6 +454,8 @@ const INTERROGATOIRES_CONTENT = `
             </div>
             
         </div>
+        <br>
+        <br>
     </div>
 `;
 

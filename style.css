@@ -127,36 +127,44 @@ body {
             color: #72b3ff;
         }
 
-        /* === ZONE NOTE DE POLICE (Révélation d'indice) === */
-        #note-police-wrapper {
-            padding: 0 30px 30px 30px; /* Aligner avec le padding de #content */
-        }
-        
-        #note-police {
-            background-color: #151e29;
-            border: 1px solid #2a3d52;
-            padding: 15px;
-            border-radius: 8px;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
+/* === ZONE NOTE DE POLICE (Révélation d'indice) === */
+#note-police-wrapper {
+    position: fixed;            /* Fixe à l'écran */
+    bottom: 20px;               /* Décalé légèrement du bas */
+    left: 50%;                  /* Centré */
+    transform: translateX(-50%);
+    width: 90%;                 /* S'adapte aux petits écrans */
+    max-width: 650px;           /* Largeur maximale */
+    z-index: 9999;              /* Toujours au-dessus du contenu */
+    padding: 0;                 /* Plus besoin du padding interne */
+}
 
-        #note-police p {
-            margin: 0;
-            color: #a0a0a0;
-            font-style: italic;
-            min-height: 20px; /* Assure une hauteur minimale */
-        }
+#note-police {
+    background-color: #151e29;
+    border: 1px solid #2a3d52;
+    padding: 15px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
-        #note-police.active-note {
-            background-color: #333333;
-            border-color: #4ef0c3;
-            box-shadow: 0 0 15px rgba(78, 240, 195, 0.4);
-        }
+#note-police p {
+    margin: 0;
+    color: #a0a0a0;
+    font-style: italic;
+    min-height: 20px;
+}
 
-        #note-police strong {
-            color: #4ef0c3;
-        }
+#note-police.active-note {
+    background-color: #333333;
+    border-color: #4ef0c3;
+    box-shadow: 0 0 15px rgba(78, 240, 195, 0.4);
+}
+
+#note-police strong {
+    color: #4ef0c3;
+}
+
 
         /* === VICTIME & SUSPECTS Layouts === */
         .victime-container {

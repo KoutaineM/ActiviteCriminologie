@@ -20,21 +20,23 @@ const HOME_CONTENT = `
         <div class="info-section">
             <h3>Contexte de l'enquête</h3>
 
-            <p>
-                Madeline Shaw, professeure d’anglais de 38 ans, a été retrouvée morte dans le salon de sa maison. 
-                Son décès est dû à un traumatisme contondant au crâne, causé par un objet encore non identifié. 
-            </p>
+            <div class="info-section">
+                <p>
+                    Madeline Shaw, professeure d’anglais de 38 ans, a été retrouvée morte dans le salon de sa maison. 
+                    Son décès est dû à un traumatisme contondant au crâne, causé par un objet encore non identifié. 
+                </p>
 
-            <p>
-                Le dossier n’est pas vierge : une première équipe d’enquêteurs avait commencé à avancer, mais après 
-                plusieurs menaces anonymes et un cambriolage de leur véhicule de service, ils ont préféré abandonner l’affaire. 
-                Votre équipe reprend donc les éléments déjà collectés… avec la mission d’aller jusqu’au bout.
-            </p>
+                <p>
+                    Le dossier n’est pas vierge : une première équipe d’enquêteurs avait commencé à avancer, mais après 
+                    plusieurs menaces anonymes et un cambriolage de leur véhicule de service, ils ont préféré abandonner l’affaire. 
+                    Votre équipe reprend donc les éléments déjà collectés… avec la mission d’aller jusqu’au bout.
+                </p>
 
-            <p>
-                Les rapports d’autopsie et d’analyses ADN sont encore en cours. Ils arriveront plus tard dans l’enquête, 
-                et seront déterminants pour éliminer plusieurs pistes.
-            </p>
+                <p>
+                    Les rapports d’autopsie et d’analyses ADN sont encore en cours. Ils arriveront plus tard dans l’enquête, 
+                    et seront déterminants pour éliminer plusieurs pistes.
+                </p>
+            </div>
 
             <h3>Éléments collectés avant votre arrivée</h3>
 
@@ -111,22 +113,9 @@ const HOME_CONTENT = `
             </p>
 
         </div>
-
-
-        <div>
-            
-
-            <div class="info-section">
-                <h3>Fiche acteur pour animateur (GM)</h3>
-                <ul>
-                    <li class="clickable" data-note="Attitude à jouer : très bavard, aime donner des détails inutiles, un peu paranoïaque.">Attitude à jouer</li>
-                    <li class="clickable" data-note="Informations à révéler seulement si les élèves posent les bonnes questions : casquette UPS (lien potentiel avec Evan Reed), porte mal fermée, aucun véhicule.">Informations à révéler (détails supplémentaires)</li>
-                </ul>
-            </div>
-        </div>
         <div>
             <div class="info-section">
-                <h3>Instructions pour les Joueurs</h3>
+                <h3>Instructions pour les Enquêteurs</h3>
                 <ul>
                     <li>Utilisez le menu ci-dessus pour naviguer dans les éléments du dossier accessibles (Home, Victime, Chronologie, Suspects, Profils Psychologiques).</li>
                     <li>Cherchez les éléments "cliquables" (texte en bleu) pour révéler des notes laissées par les enquêteurs précédents, qui peuvent vous donner des indices ou des informations complémentaires.</li>
@@ -134,7 +123,6 @@ const HOME_CONTENT = `
                 </ul>
             </div>
         </div>
-
         <br>
     </div>
 `;
@@ -198,7 +186,7 @@ const SUSPECTS_CONTENT = `
 
 <p>Quatre individus présentant un lien avec la victime ou la scène ont été identifiés par la police. Leurs profils sont mis à jour après la première série d'interrogatoires réalisée par les prédécents enquêteurs.</p>
 <p>Le capitaine vous a donné sa confiance pour boucler l'enquête et identifier le coupable. Cependant, il veut être sûr que vous ayez vraiment les épaules pour réaliser la suite : l'Interrogatoire, la Scène de Crime et le Dossier d'Autopsie.</p>
-<p>Il vous demande donc de trouver vous-même les 4 suspects principaux en analysant les informations déjà disponibles. Bonne chance !</p> 
+<p>Il vous demande donc de trouver vous-même les 4 suspects principaux en analysant les informations déjà disponibles. Attention, l'enquête a aussi été confié à d'autres équipes. Essayez de trouver les 4 suspects principaux avec le moins de tentative possible pour vous faire mousser auprès du capitaine.</p> 
 
 <div id="add-suspect-box">
     <input type="text" id="suspect-input" placeholder="Ajouter un suspect...">
@@ -206,6 +194,13 @@ const SUSPECTS_CONTENT = `
 </div>
 
 <div class="suspects-container" id="suspect-list">
+</div>
+
+<h3>Instructions pour les enquêteurs</h3>
+<div class="info-container">
+    <p>Lorsque vous êtes sûr d'avoir trouvé un suspect principal, faites-en part à votre capitaine puis tapez son "prénom nom" dans la case ci-dessus.
+    Au moment où vous aurez trouver les 4 suspects, lisez la partie Interrogatoires et appelez votre capitaine qui vous donnera accès à la suite de l'enquête. Il vous sera fortement conseillé de commencer à lire la partie Profils Psychologique...</p> 
+
 </div>
 
 `;

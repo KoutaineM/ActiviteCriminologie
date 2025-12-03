@@ -21,14 +21,13 @@ const HOME_CONTENT = `
             <h3>Contexte de l'enquête</h3>
 
             <p>
-                Madeline Shaw, professeure d’anglais de 38 ans, a été retrouvée morte dans la cuisine de sa maison. 
+                Madeline Shaw, professeure d’anglais de 38 ans, a été retrouvée morte dans le salon de sa maison. 
                 Son décès est dû à un traumatisme contondant au crâne, causé par un objet encore non identifié. 
-                Rien n’a été volé, et la scène présente des signes de lutte désorganisée.
             </p>
 
             <p>
                 Le dossier n’est pas vierge : une première équipe d’enquêteurs avait commencé à avancer, mais après 
-                plusieurs menaces anonymes et un cambriolage de leur véhicule de service, ils ont abandonné l’affaire. 
+                plusieurs menaces anonymes et un cambriolage de leur véhicule de service, ils ont préféré abandonner l’affaire. 
                 Votre équipe reprend donc les éléments déjà collectés… avec la mission d’aller jusqu’au bout.
             </p>
 
@@ -39,14 +38,30 @@ const HOME_CONTENT = `
 
             <h3>Éléments collectés avant votre arrivée</h3>
 
-            <p>L’équipe précédente avait dressé une liste élargie de personnes potentiellement liées à la victime. 
+            <h4>Témoin : Arthur "Art" Gladstone</h4>
+
+            <div class="info-section">
+                <p>Arthur Gladstone, 72 ans, est le voisin qui a alerté la police.</p>
+
+                <ul>
+                    <li class="clickable" data-note="Arthur a vu un homme immobile devant la maison jeudi soir.">Homme immobile jeudi soir (avant le meurtre)</li>
+                    <li class="clickable" data-note="Un bruit brusque vendredi vers 16h. Heure estimée du meurtre : 16h00 - 16h30.">Bruit brusque vendredi (jour du meurtre)</li>
+                    <li class="clickable" data-note="Il a vu une silhouette sortir par la porte arrière, trop vite pour identifier → suspect potentiel.">Silhouette sortie par la porte arrière</li>
+                    <li class="clickable" data-note="Aucun véhicule n’a démarré, donc le suspect est probablement parti à pied.">Aucun véhicule aperçu (départ du suspect)</li>
+                </ul>
+            </div>
+
+            <h4>Suspects Potentiels</h4>
+
+            <div class="info-section">
+            <p>L’équipe précédente avait aussi dressé une liste élargie de personnes potentiellement liées à la victime. 
             Certaines pistes semblent sérieuses… d’autres beaucoup moins, mais elles font tout de même partie du dossier.</p>
 
             <h4>Personnes listées dans le dossier initial :</h4>
 
             <ul>
 
-                <li class="clickable" data-note="Conflits minimes : nuisances sonores, chien, parking. Aucun antécédent violent connu.">
+                <li class="clickable" data-note="Conflits minimes : nuisances sonores, chien, parking. Aucun antécédent violent connu. Avec son passé de rugbyman, de dos, sa carrure est semblable à celle d'un homme.">
                     <b>Hannah Leroux</b> – Voisine directe
                 </li>
 
@@ -63,14 +78,14 @@ const HOME_CONTENT = `
                 </li>
 
                 <li class="clickable" data-note="Élève fragile émotionnellement. La victime était un soutien important pour lui. Aucun motif clair, mais comportement instable.">
-                    <b>Jonah Miller</b> – Élève de Madeline
+                    <b>Jonhn iller</b> – Élève de Madeline
                 </li>
 
                 <li class="clickable" data-note="Dénoncé par la victime pour l’état de ses locations. Mobile financier possible.">
                     <b>Ryan Kessler</b> – Promoteur immobilier
                 </li>
 
-                <li class="clickable" data-note="Collègue enseignant qui s’opposait parfois à Madeline sur des choix pédagogiques. Aucun antécédent violent. Était en voyage scolaire.">
+                <li class="clickable" data-note="Collègue enseignant qui s’opposait parfois à Madeline sur des choix pédagogiques. Aucun antécédent violent.">
                     <b>Paul Brenner</b> – Professeur d’histoire
                 </li>
 
@@ -87,6 +102,7 @@ const HOME_CONTENT = `
                 </li>
 
             </ul>
+            </div>
 
             <p>
                 Certaines de ces personnes n'ont aucun lien direct avec le meurtre mais ont été mentionnées dans 
@@ -98,18 +114,7 @@ const HOME_CONTENT = `
 
 
         <div>
-            <h2>Témoin : Arthur "Art" Gladstone</h2>
-
-            <div class="info-section">
-                <p>Arthur Gladstone, 72 ans, est le voisin qui a alerté la police.</p>
-
-                <ul>
-                    <li class="clickable" data-note="Arthur a vu un homme immobile devant la maison jeudi soir.">Homme immobile jeudi soir (avant le meurtre)</li>
-                    <li class="clickable" data-note="Un bruit brusque vendredi vers 16h. Heure estimée du meurtre : 16h00 - 16h30.">Bruit brusque vendredi (jour du meurtre)</li>
-                    <li class="clickable" data-note="Il a vu une silhouette sortir par la porte arrière, trop vite pour identifier → suspect potentiel.">Silhouette sortie par la porte arrière</li>
-                    <li class="clickable" data-note="Aucun véhicule n’a démarré, donc le suspect est probablement parti à pied.">Aucun véhicule aperçu (départ du suspect)</li>
-                </ul>
-            </div>
+            
 
             <div class="info-section">
                 <h3>Fiche acteur pour animateur (GM)</h3>
@@ -239,12 +244,40 @@ const SCENE_CONTENT = `
                     </thead>
                     <tbody>
 
+                        <tr>
+                            <td>I-008N</td>
+                            <td>Porte entre ouverte</td>
+                            <td>Entrée de la maion</td>
+                            <td class="clickable" data-note="La porte de la maison est toujours ouverte mais ne présente aucune trace d'effraction et la serrure n'est pas fermée.">
+                                Piste supplémentaire.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>I-009A</td>
+                            <td>Colis Vide</td>
+                            <td>Entrée de la maison</td>
+                            <td class="clickable" data-note="Un colis vide a été retrouvée proche de la porte. Il semble ne jamais avoir rien contenu. C'est étrange...">
+                                Entrée facile.
+                            </td>
+                        </tr>
+
+                        <!-- Fusion : Éraflures cutanées -->
+                        <tr>
+                            <td>I-005S</td>
+                            <td>Éraflures cutanées</td>
+                            <td>Avant-bras droit de la victime</td>
+                            <td class="clickable" data-note="Éraflures indiquant un mouvement de défense.">
+                                Preuve de défense de la victime.
+                            </td>
+                        </tr>
+
                         <!-- Fusion : Lampe -->
                         <tr>
                             <td>I-001A</td>
                             <td>Lampe sur pied (brisée)</td>
                             <td>Salon (près du corps)</td>
-                            <td class="clickable" data-note="Lampadaire brisé avec trace de choc récente sur un angle. Compatible avec les blessures de la victime. L'objet a pu être utilisé comme arme. Des micro-traces de verre sont présentes.">
+                            <td class="clickable" data-note="Lampe brisée en porcelaine avec trace de choc récente sur un angle. L'objet a pu être utilisé comme arme. Des micro-traces de verre sont présentes au sol.">
                                 Compatible avec arme du crime.
                             </td>
                         </tr>
@@ -254,7 +287,7 @@ const SCENE_CONTENT = `
                             <td>I-001B</td>
                             <td>Pile de livres renversée</td>
                             <td>Salon</td>
-                            <td class="clickable" data-note="Livres tombés au sol près du canapé. Signe de lutte impulsive ou d'une bousculade. Aucun vol constaté.">
+                            <td class="clickable" data-note="Livres tombés au sol proche de la table. Il en reste quelques uns sur la table. Signe de lutte impulsive ou d'une bousculade. Aucun vol constaté.">
                                 Indice de lutte désorganisée.
                             </td>
                         </tr>
@@ -264,7 +297,7 @@ const SCENE_CONTENT = `
                             <td>I-002T</td>
                             <td>Plante brisée + terre fine</td>
                             <td>Sous la table + sol salon</td>
-                            <td class="clickable" data-note="Deux plantes brisées sur sept. Terre projetée sur 30 cm. Terre compatible avec jardinières du quartier (y compris maison de la victime et d’Evan Reed).">
+                            <td class="clickable" data-note="Deux plantes brisées sur sept. Terre projetée sur 30 cm. Confirme une lutte désorganisée">
                                 Mouvement brusque + terre analysée.
                             </td>
                         </tr>
@@ -274,8 +307,17 @@ const SCENE_CONTENT = `
                             <td>I-004V</td>
                             <td>Mug en céramique (cassé)</td>
                             <td>Sous la table du salon</td>
-                            <td class="clickable" data-note="Mug fracturé, éclats dans un rayon d’un mètre. Objet de la victime. Aucun ADN d’un tiers. Signe d’un geste impulsif.">
-                                Mug brisé lors de la lutte.
+                            <td class="clickable" data-note="Mug fracturé, éclats dans un rayon d’un mètre. Objet de la victime. Le contenu, une tisane à la camomille a été renversée. Signe d’un geste impulsif.">
+                                Mug renversé et brisé lors de la lutte.
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>I-006D</td>
+                            <td>Vêtements tachés</td>
+                            <td>Sur la victime dans le salon</td>
+                            <td class="clickable" data-note="La tisane semble s'être renversée sur les vêtements de Madeline Shaw pendant la lutte">
+                                Lutte désorganisée.
                             </td>
                         </tr>
 
@@ -284,7 +326,7 @@ const SCENE_CONTENT = `
                             <td>I-003P</td>
                             <td>Porte arrière non verrouillée</td>
                             <td>Porte arrière</td>
-                            <td class="clickable" data-note="Porte mal fermée, sol boueux à l'extérieur. Probable voie de fuite du tueur. Le témoin a vu une silhouette sortir par cette porte.">
+                            <td class="clickable" data-note="Porte mal fermée et terre similaire aux plantes en pots brisés. Probable voie de fuite du tueur. Le témoin a vu une silhouette sortir par cette porte. Il semblait connaitre les alentours de la maison">
                                 Voie de fuite probable.
                             </td>
                         </tr>
@@ -294,7 +336,7 @@ const SCENE_CONTENT = `
                             <td>I-003E</td>
                             <td>Empreinte de chaussure (taille 42)</td>
                             <td>Boue extérieure (porte arrière)</td>
-                            <td class="clickable" data-note="Semelle standard. Taille 42. Compatible avec plusieurs suspects. Corroboré par le témoin.">
+                            <td class="clickable" data-note="Semelle standard. Taille 42. Compatible avec plusieurs suspects.">
                                 Indice non discriminant.
                             </td>
                         </tr>
@@ -302,72 +344,19 @@ const SCENE_CONTENT = `
                         <!-- Fusion : Bouton UPS -->
                         <tr>
                             <td>I-006C</td>
-                            <td>Bouton d'uniforme UPS</td>
+                            <td>Bouton de chemise/uniforme</td>
                             <td>Boue extérieure, porte arrière</td>
-                            <td class="clickable" data-note="Bouton UPS arraché lors d’une fuite. Modèle identique à celui d'Evan Reed. Correspond au récit du témoin.">
-                                Lien matériel direct avec Evan Reed.
-                            </td>
-                        </tr>
-
-                        <!-- Fusion : Éraflures cutanées -->
-                        <tr>
-                            <td>I-005S</td>
-                            <td>Éraflures cutanées (prélèvement ADN)</td>
-                            <td>Avant-bras droit de la victime</td>
-                            <td class="clickable" data-note="Éraflures indiquant un mouvement de défense. ADN prélevé : correspond à Evan Reed.">
-                                Preuve de défense de la victime.
+                            <td class="clickable" data-note="Bouton arraché lors d’une fuite.">
+                                Lien matériel.
                             </td>
                         </tr>
 
                         <!-- Synthèse Unité Technique intégrée en éléments matériels -->
-                        <tr>
-                            <td>I-007X</td>
-                            <td>Absence de l’arme du crime</td>
-                            <td>Scène globale</td>
-                            <td class="clickable" data-note="L’arme du crime a été emportée par le tueur. Confirme une fuite rapide mais consciente.">
-                                Arme non retrouvée.
-                            </td>
-                        </tr>
 
-                        <tr>
-                            <td>I-008A</td>
-                            <td>Piste d’accès possible</td>
-                            <td>Porte arrière / porte non verrouillée</td>
-                            <td class="clickable" data-note="Le tueur connaissait probablement la maison. Effraction non nécessaire.">
-                                Entrée facile.
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td>I-009N</td>
-                            <td>Nouvel objet étranger (à analyser)</td>
-                            <td>Zone de fuite extérieure</td>
-                            <td class="clickable" data-note="Petit objet non identifié retrouvé près de la porte arrière. Voir Indice I-006 pour lien potentiel.">
-                                Piste supplémentaire.
-                            </td>
-                        </tr>
 
                     </tbody>
                 </table>
             </div>
-
-
-            <div class="info-section">
-                <h3>Synthèse de l'Unité Technique</h3>
-                <p>L'analyse de la scène indique un crime de nature impulsive et non préméditée, mais potentiellement dissimulé par une fuite organisée.</p>
-                <ul>
-                    <li class="clickable" data-note="L'arme du crime n'a pas été retrouvée. Elle a été emportée par le tueur.">Arme du crime : Non présente sur la scène.</li>
-                    <li class="clickable" data-note="Les indices suggèrent que le tueur connaissait la maison et n'a pas eu besoin d'entrer par effraction par la porte principale.">Accès : Possiblement par la porte arrière ou une entrée non verrouillée.</li>
-                    <li class="clickable" data-note="Un petit objet étranger a été trouvé près de la zone de fuite. Voir la carte et la section Indices pour le détail.">Nouvelle piste découverte (Indice I-006).</li>
-                </ul>
-            </div>
-
-        <div>
-
-        <div class="info-section">
-            <h3>Piste à Explorer</h3>
-            <p class="clickable" data-note="L'ensemble des indices matériels (Lampe brisée, Terre, Empreinte et Bouton) est cohérent avec une intrusion rapide et une agression impulsive, puis une fuite par la porte arrière."></p>
-        </div>
         
         </div>
     </div>
@@ -431,7 +420,7 @@ const INTERROGATOIRES_CONTENT = `
                 <h3>Consignes de l'interrogatoire</h3>
                 <p> Avant de commencer les interrogatoires, une préparation rigoureuse est indispensable. Pour qu’un interrogatoire soit autorisé, deux conditions doivent être réunies : </p> 
                 <ul> 
-                    <li> <strong>1ère condition :</strong> avoir réduit le nombre de suspects à deux personnes, en s’appuyant sur des éléments sérieux et recoupés <em>(liens logiques entre le contexte, les preuves matérielles, les témoignages et le profil psychologique suspecté).</em> </li>
+                    <li> <strong>1ère condition :</strong> avoir réduit le nombre de suspects à deux personnes, en s’appuyant sur des éléments sérieux et recoupés <em>(liens logiques entre le contexte, les preuves matérielles de la scène de crime, les témoignages, l'autopsie et le profil psychologique suspecté).</em> </li>
                     <li>
                         <strong>2ème condition :</strong> avoir préparé une série de questions stratégiques adaptées au <strong>profil psychologique</strong> de chaque suspect retenu.  
                         Ces questions doivent être conçues pour observer et analyser leurs <strong>réactions émotionnelles et comportementales</strong> — et non leurs réponses factuelles, souvent trompeuses.
@@ -483,15 +472,16 @@ const AUTOPSIE_CONTENT = `
             </ul>
 
             <h3>Cause du décès</h3>
-            <p class="clickable" data-note="Traumatisme crânien sur le côté droit du crâne → correspond aux indices de la scène (lampe).">Traumatisme crânien dû à un impact sur le côté droit du crâne.</p>
+            <p class="clickable" data-note="Traumatisme crânien sur le côté droit du crâne. Des micro-morceaux de porcelaine ont été retrouvés dans la plaie.">Traumatisme crânien dû à un impact sur le côté droit du crâne.</p>
 
             <h3>Arme probable</h3>
-            <p class="clickable" data-note="Objet contondant léger mais rigide → compatible avec la lampe renversée retrouvée sur la scène.">Objet contondant, non métallique, léger mais rigide.</p>
+            <p class="clickable" data-note="Objet contondant léger mais rigide en porcelaine.">Objet contondant, non métallique, léger mais rigide.</p>
 
             <h3>Signes de lutte</h3>
             <ul>
-                <li class="clickable" data-note="Éraflures sur l’avant-bras droit → la victime a tenté de se protéger. ADN de l'agresseur (Evan Reed) trouvé.">Éraflures sur l’avant-bras droit</li>
-                <li class="clickable" data-note="Petite ecchymose sur la clavicule → agresseur inexpérimenté, gestes chaotiques.">Petite ecchymose sur la clavicule</li>
+                <li class="clickable" data-note="Éraflures sur l’avant-bras droit. Ils ont pu être provoqué par la lutte ou par une chute.">Éraflures sur l’avant-bras droit</li>
+                <li class="clickable" data-note="Plusieurs petites ecchymoses sur le haut du corps. L'agresseur semble être inexpérimenté, gestes chaotiques.">Petites ecchymoses</li>
+                <li class="clickable" data-note="Lors de lutte, la victime aurait pu griffer le tueur, mettant de la peau du coupable sous ses ongles. Les analyses ADN permettront d'établir un lien fort avec le tueur.">Ongles de la victime</li>
             </ul>
 
             <h3>Heure probable de la mort</h3>
@@ -500,7 +490,6 @@ const AUTOPSIE_CONTENT = `
             <h3>Autres éléments</h3>
             <ul>
                 <li class="clickable" data-note="Pas de drogues ou alcool détectés dans le corps.">Pas de drogues ou alcool</li>
-                <li class="clickable" data-note="Indices de lutte corroborés par la scène de crime → confirme que l’agresseur était impulsif.">Indices de lutte corroborés par la scène de crime</li>
             </ul>
         </div>
     </div>

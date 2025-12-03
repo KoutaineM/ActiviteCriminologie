@@ -8,6 +8,7 @@ const ADN_CODE = '851AD';
 const SCENE_CODE = '851SC';
 
 
+
 // Contenu de la page d'accueil
 const HOME_CONTENT = `
     <div>
@@ -81,7 +82,7 @@ const HOME_CONTENT = `
                 </li>
 
                 <li class="clickable" data-note="Élève fragile émotionnellement. La victime était un soutien important pour lui. Aucun motif clair, mais comportement instable.">
-                    <b>Jonh Miller</b> – Élève de Madeline
+                    <b>John Miller</b> – Élève de Madeline
                 </li>
 
                 <li class="clickable" data-note="Dénoncé par la victime pour l’état de ses locations. Mobile financier possible.">
@@ -857,7 +858,6 @@ function toggleAlibi(element) {
 const SUS_A =  `
             <!-- Suspect A -->
             <div class="suspect-card">
-                <img src="https://via.placeholder.com/150x200?text=Evan+Reed">
                 <h3>Evan Reed - 25 ans</h3>
                 <ul>
                     <li>Profession : Livreur UPS</li>
@@ -875,7 +875,6 @@ const SUS_A =  `
 const SUS_B  = `
             <!-- Suspect B -->
             <div class="suspect-card">
-                <img src="https://via.placeholder.com/150x200?text=Hannah+Leroux">
                 <h3>Hannah Leroux - 33 ans</h3>
                 <ul>
                     <li>Profession : Voisine</li>
@@ -893,7 +892,6 @@ const SUS_B  = `
 const SUS_C = `
             <!-- Suspect C -->
             <div class="suspect-card">
-                <img src="https://via.placeholder.com/150x200?text=Jonah+Miller">
                 <h3>John Miller - 17 ans</h3>
                 <ul>
                     <li>Profession : Lycéen</li>
@@ -911,7 +909,6 @@ const SUS_C = `
 const SUS_D = `
             <!-- Suspect D -->
             <div class="suspect-card">
-                <img src="https://via.placeholder.co/150x200/151e29/4aa3ff?text=Ryan+Kessler" alt="Ryan Kessler">
                 <h3>Ryan Kessler - 42 ans</h3>
                 <ul>
                     <li>Profession : Promoteur immobilier</li>
@@ -930,49 +927,67 @@ function addSuspect() {
     const input = document.getElementById("suspect-input");
     const name = input.value.trim();
 
-    if (name.toLowerCase() === "evan reed") {
-        const newSuspect = SUS_A ;
+    if (name === "") return;
 
-        // Ajout dans la liste
-        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", newSuspect);
-        saveSuspect("evan reed") ;
+    pendingSuspect = name;           // On stocke ce qu’ils ont tapé
+    input.value = "";                // On nettoie le champ
+    document.getElementById("gm-error").innerText = "";
+    
+    openGMPopup();                   // On demande validation GM
 
-        input.value = "";
-        alert("Suspect ajouté : Evan Reed");
-    }
-    if (name.toLowerCase() === "hannah leroux") {
-        saveSuspect("hannah leroux")
-        const newSuspect = SUS_B ;
-
-        // Ajout dans la liste
-        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", newSuspect);
-
-        input.value = "";
-        alert("Suspect ajouté : Hannah Leroux");
-    }
-    if (name.toLowerCase() === "john miller") {
-        saveSuspect("john miller")
-        const newSuspect = SUS_C ; 
-
-        // Ajout dans la liste
-        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", newSuspect);
-
-        input.value = "";
-        alert("Suspect ajouté : Jonh Miller");
-    }
-        if (name.toLowerCase() === "ryan kessler") {
-        saveSuspect("ryan kessler") ;
-        const newSuspect = SUS_D;
-
-        // Ajout dans la liste
-        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", newSuspect);
-
-        input.value = "";
-        alert("Suspect ajouté : Ryan Kessler");
-    }
     activateClickableElements();
 
 }
+
+const GM_PASSWORD = "topsecret";  // ← Change-le si tu veux
+let pendingSuspect = "";   // stocke le nom entré avant validation
+
+function openGMPopup() {
+    document.getElementById("gm-popup").style.display = "flex";
+}
+
+function closeGMPopup() {
+    document.getElementById("gm-popup").style.display = "none";
+    document.getElementById("gm-password").value = "";
+}
+
+function validateAttempt() {
+    const pass = document.getElementById("gm-password").value;
+
+    if (pass !== GM_PASSWORD) {
+        document.getElementById("gm-error").innerText = "Mot de passe incorrect.";
+        return;
+    }
+
+    closeGMPopup();   // Le mot de passe est correct -> fermer popup
+
+    // Vérification du suspect
+    if (pendingSuspect === "evan reed") {
+        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", SUS_A);
+        saveSuspect("evan reed");
+        alert("Suspect ajouté : Evan Reed");
+
+    } else if (pendingSuspect === "hannah leroux") {
+        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", SUS_B);
+        saveSuspect("hannah leroux");
+        alert("Suspect ajouté : Hannah Leroux");
+
+    } else if (pendingSuspect === "john miller") {
+        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", SUS_C);
+        saveSuspect("john miller");
+        alert("Suspect ajouté : John Miller");
+
+    } else if (pendingSuspect === "ryan kessler") {
+        document.getElementById("suspect-list").insertAdjacentHTML("beforeend", SUS_D);
+        saveSuspect("ryan kessler");
+        alert("Suspect ajouté : Ryan Kessler");
+
+    } else {
+        alert("Aucun suspect correspondant à ce nom.");
+    }
+}
+
+
 
 function openHistoriqueLivraisons() {
     document.getElementById("popup-livraisons").style.display = "flex";

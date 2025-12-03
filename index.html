@@ -40,6 +40,21 @@
             <input type="text" id="suspect-input" placeholder="Ajouter un suspect...">
             <button onclick="addSuspect()">Ajouter</button>
         </div>
+
+        <!-- Fenêtre de validation Game Master -->
+        <div id="gm-popup" class="gm-popup" style="display:none;">
+            <div class="gm-popup-box">
+                <h3>Validation Game Master</h3>
+                <p>Un enquêteur souhaite valider un nom de suspect.</p>
+
+                <input type="password" id="gm-password" placeholder="Mot de passe GM...">
+                <button onclick="validateAttempt()">Valider</button>
+                <button onclick="closeGMPopup()">Annuler</button>
+
+                <p id="gm-error" class="gm-error"></p>
+            </div>
+        </div>
+
         
         <!-- === ZONE NOTE DE POLICE (Révélation d'indice) - STATIQUE === -->
         <!-- CET ÉLÉMENT N'EST PAS EFFACÉ AU CHANGEMENT DE PAGE, ce qui résout le problème. -->

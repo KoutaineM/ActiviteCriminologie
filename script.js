@@ -46,8 +46,9 @@ const HOME_CONTENT = `
                 <p>Arthur Gladstone, 72 ans, est le voisin qui a alerté la police.</p>
 
                 <ul>
-                    <li class="clickable" data-note="Arthur a vu un homme immobile devant la maison jeudi soir.">Homme immobile jeudi soir (avant le meurtre)</li>
-                    <li class="clickable" data-note="Un bruit brusque vendredi vers 16h. Heure estimée du meurtre : 16h00 - 16h30.">Bruit brusque vendredi (jour du meurtre)</li>
+                    <li class="clickable" data-note="Arthur a vu un homme immobile devant la maison jeudi soir.">Homme immobile jeudi soir</li>
+                    <li class="clickable" data-note="Arthur aperçoit Madeline en train de préparer sa tisane habituelle par la fenêtre de sa cuisine">Dernière trace de vie</li>
+                    <li class="clickable" data-note="Un bruit brusque vendredi vers 16h.">Bruit brusque du vendredi 15</li>
                     <li class="clickable" data-note="Il a vu une silhouette sortir par la porte arrière, trop vite pour identifier → suspect potentiel.">Silhouette sortie par la porte arrière</li>
                     <li class="clickable" data-note="Aucun véhicule n’a démarré, donc le suspect est probablement parti à pied.">Aucun véhicule aperçu (départ du suspect)</li>
                 </ul>
@@ -141,7 +142,7 @@ const VICTIME_CONTENT = `
                     <li><strong>Nom :</strong> Shaw, Madeline</li>
                     <li><strong>Âge :</strong> 48 ans</li>
                     <li><strong>Profession :</strong> Professeure d'anglais.</li>
-                    <li><strong>Dernière vue :</strong> Jeudi 14 novembre, 23h00 (par son voisin).</li>
+                    <li><strong>Dernière vue :</strong> Vendredi 15, 15h30 dans sa cuisine.</li>
                     <li class="clickable" data-note="Madeline avait un conflit bien connu avec sa voisine à propos des aboiements de son chien qui pouvaient durer des nuits entières."><strong>Conflits connus et récents :</strong> Hannah Leroux.</li>
                 </ul>
             </div>
@@ -371,13 +372,16 @@ const CHRONOLOGIE_CONTENT = `
             <div class="timeline-wrapper">
                 <ul>
                     <li class="clickable timeline-item" data-note="Jeudi soir : Arthur Gladstone aperçoit un homme immobile devant la maison">
-                        <span class="timeline-time">Jeu. Soir (23h00)</span>Observation du voisin
+                        <span class="timeline-time">Jeu. Soir (vers 23h00)</span>Observation du voisin
                     </li>
-                    <li class="clickable timeline-item" data-note="Vendredi matin : Madeline aperçue au supermarché, rentre chez elle. Dernière trace de vie certaine.">
+                    <li class="clickable timeline-item" data-note="Vendredi matin : Madeline aperçue au supermarché, rentre chez elle.">
                         <span class="timeline-time">Ven. Matin</span>Activité de la victime
                     </li>
-                    <li class="clickable timeline-item highlight" data-note="Vendredi entre 15h45 et 17h00 : Heure estimée par le témoignage du bruit. C'est la fenêtre de temps critique.">
-                        <span class="timeline-time">Ven. 15h45 - 17h00</span>DÉCÈS DE MADELINE SHAW
+                    <li class="clickable timeline-item" data-note="Vendredi 15h30 : Madeline aperçue par son voisin. C'est sa dernière trace de vie certaine">
+                        <span class="timeline-time">Ven. 15h30</span>Habitude de la victime
+                    </li>
+                    <li class="clickable timeline-item highlight" data-note="Vendredi entre 15h30 et 17h30 : C'est la fenêtre de temps critique. Il faut la décrire pour élucider l'enquête.">
+                        <span class="timeline-time">Ven. 15h30 - 17h30</span>DÉCÈS DE MADELINE SHAW
                     </li>
                     <li class="clickable timeline-item" data-note="Vendredi vers 16h : bruit brusque signalé par le voisin (Hannah Leroux le confirme).">
                         <span class="timeline-time">Ven. ~16h00</span>Bruit suspect
@@ -388,13 +392,13 @@ const CHRONOLOGIE_CONTENT = `
                     <li class="clickable timeline-item" data-note="Samedi : scène de crime sécurisée et premiers relevés. Des traces d'ADN sont prélevées.">
                         <span class="timeline-time">Samedi</span>Sécurisation et relevés initiaux
                     </li>
-                    <li class="clickable timeline-item" data-note="Dimanche : prélèvements ADN et analyses d’indices (Terre, Mug, Bouton) envoyés au laboratoire. Début de l'identification de l'ADN Inconnu A.">
+                    <li class="clickable timeline-item" data-note="Dimanche : prélèvements ADN et analyses d’indices envoyés au laboratoire. Le laboratoire est débordé, les résultats mettront du temps à arriver.">
                         <span class="timeline-time">Dimanche</span>Prélèvements ADN & Indices
                     </li>
-                    <li class="clickable timeline-item" data-note="Jeudi dans la journée : résultats d’autopsie disponibles">
-                        <span class="timeline-time">Jeudi</span>Résultats d'Autopsie
+                    <li class="clickable timeline-item" data-note="Indéterminé : résultats d’autopsie disponibles">
+                        <span class="timeline-time">Indéterminé</span>Résultats d'Autopsie
                     </li>
-                    <li class="clickable timeline-item" data-note="Jeudi Prochain : résultats ADN reçus. Vous êtes des enquêteurs débutants, votre enquête n'est pas prioritaire d'où le temps d'attente pour les relevés ADN">
+                    <li class="clickable timeline-item" data-note="Jeudi Prochain : la police scientfique pense qu'ils auront les résultats à cette date.">
                         <span class="timeline-time">Jeudi Prochain</span>Résultats ADN
                     </li>
                 </ul>
@@ -449,8 +453,8 @@ const AUTOPSIE_CONTENT = `
     <div>
         <h2>Rapport d'Autopsie</h2>
         <div id="autopsie-locked" class="report-locked">
-            <h3>ACCÈS RESTREINT</h3>
-            <p>Ce rapport contient des informations sensibles. Un code de sécurité est nécessaire pour y accéder.</p>
+            <h3>INDISPONIBLE</h3>
+            <p>Ce rapport contient des informations sensibles. Un code de sécurité est nécessaire pour y accéder. Votre capitaine vous le donnera en temps voulu...</p>
             <input type="text" id="unlock-code-autopsie" placeholder="Entrez le code de déverrouillage">
             <button id="unlock-btn-autopsie" onclick="attemptUnlock('autopsie', AUTOPSIE_CODE)">Déverrouiller</button>
             <p id="unlock-message-autopsie" style="color: #ff7f7f; margin-top: 10px;"></p>
@@ -495,8 +499,8 @@ const ADN_CONTENT = `
     <div>
         <h2>Rapport d'Analyse ADN</h2>
         <div id="adn-locked" class="report-locked">
-            <h3>ACCÈS RESTREINT</h3>
-            <p>Ce rapport contient des informations sensibles. Un code de sécurité est nécessaire pour y accéder.</p>
+            <h3>INDISPONIBLE</h3>
+            <p>Ce rapport contient des informations sensibles. Un code de sécurité est nécessaire pour y accéder. Votre capitaine vous le donnera en temps voulu...</p>
             <input type="text" id="unlock-code-adn" placeholder="Entrez le code de déverrouillage">
             <button id="unlock-btn-adn" onclick="attemptUnlock('adn', ADN_CODE)">Déverrouiller</button>
             <p id="unlock-message-adn" style="color: #ff7f7f; margin-top: 10px;"></p>
@@ -857,7 +861,7 @@ const SUS_A =  `
                 <h3>Evan Reed - 25 ans</h3>
                 <ul>
                     <li>Profession : Livreur UPS</li>
-                    <li class="clickable" data-note="Vu près de la maison de Madeline la veille du meurtre. Il effectuait la livraison d'un colis bel et bien commandé par Mme Shaw.">Lien : Livraisons régulières, dernière personne à l'avoir vu en vie</li>
+                    <li class="clickable" data-note="Vu près de la maison de Madeline la veille du meurtre. Il effectuait la livraison d'un colis bel et bien commandé par Mme Shaw.">Lien : Livraisons régulières</li>
                     <li class="clickable" data-note="Comportement impulsif lors de l'interrogatoire, et quelques contradictions.">Profil psychologique : Impulsif</li>
                 </ul>
 

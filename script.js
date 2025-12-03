@@ -81,7 +81,7 @@ const HOME_CONTENT = `
                 </li>
 
                 <li class="clickable" data-note="Élève fragile émotionnellement. La victime était un soutien important pour lui. Aucun motif clair, mais comportement instable.">
-                    <b>Jonhn iller</b> – Élève de Madeline
+                    <b>Jonh Miller</b> – Élève de Madeline
                 </li>
 
                 <li class="clickable" data-note="Dénoncé par la victime pour l’état de ses locations. Mobile financier possible.">
@@ -96,7 +96,7 @@ const HOME_CONTENT = `
                     <b>Liam Cooper</b> – Ancien élève
                 </li>
 
-                <li class="clickable" data-note="Livreur souvent présent dans le quartier. Trois témoins confirment qu’il discutait parfois un peu trop longtemps avec la victime.">
+                <li class="clickable" data-note="Livreur souvent présent dans le quartier. Trois témoins confirment qu’il discutait parfois avec la victime. Ces collègues précisent qu'il était toujours très enthousiaste à l'idée de livrer Mme Shaw.">
                     <b>Evan Reed</b> – Livreur UPS
                 </li>
 

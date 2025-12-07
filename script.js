@@ -65,7 +65,7 @@ const HOME_CONTENT = `
 
             <ul>
 
-                <li class="clickable" data-note="Conflits minimes : nuisances sonores, chien, parking. Aucun antécédent violent connu. Avec son passé de rugbyman, de dos, sa carrure est semblable à celle d'un homme.">
+                <li class="clickable" data-note="Conflits minimes : nuisances sonores, chien, parking. Aucun antécédent violent connu. Avec son passé de militaire, de dos, sa carrure peut être semblable à celle d'un homme.">
                     <b>Hannah Leroux</b> – Voisine directe
                 </li>
 
@@ -121,7 +121,7 @@ const HOME_CONTENT = `
                 <ul>
                     <li>Utilisez le menu ci-dessus pour naviguer dans les éléments du dossier accessibles (Home, Victime, Chronologie, Suspects, Profils Psychologiques).</li>
                     <li>Cherchez les éléments "cliquables" (texte en bleu) pour révéler des notes laissées par les enquêteurs précédents, qui peuvent vous donner des indices ou des informations complémentaires.</li>
-                    <li>Recoupez les informations des Suspects, de la Scène de crime, du Rapport d'Autopsie et des Relevés ADN pour identifier l'auteur du crime.</li>
+                    <li>Recoupez les informations des Suspects, de la Scène de crime, du Rapport d'Autopsie et des Relevés ADN pour identifier l'auteur du crime et décrire aux mieux la fenêtre temporelle du crime (cf. Chronologie).</li>
                 </ul>
             </div>
         </div>
@@ -240,6 +240,15 @@ const SCENE_CONTENT = `
                         </tr>
                     </thead>
                     <tbody>
+                        <tr>
+                            <td>I-002D</td>
+                            <td>Lettre de menace</td>
+                            <td>Boite aux lettres</td>
+                            <td class="clickable" 
+                                    data-note="Lettre de menace retrouvée dans le bureau de Madeline. Signée par Ryan Kessler, datée de la veille du meurtre. Ton virulent, avertissement direct.">
+                                    Lettre agressive
+                            </td>
+                        </tr>
 
                         <tr>
                             <td>I-008N</td>
@@ -354,7 +363,8 @@ const SCENE_CONTENT = `
                     </tbody>
                 </table>
             </div>
-        
+        <br>
+        <br>
         </div>
     </div>
 </div>
@@ -431,16 +441,103 @@ const INTERROGATOIRES_CONTENT = `
              </div>
 
             <div class="info-section">
-                <h3>Techniques d'Interrogatoire</h3>
-                <p>Pour mener l'interrogatoire, les enquêteurs doivent utiliser des techniques psychologiques et factuelles pour déceler la vérité et tester la cohérence des récits :</p>
+    <h3>Techniques d'Interrogatoire</h3>
 
-                <ul>
-                    <li class="clickable" data-note="Posez des questions ouvertes pour obtenir des réponses détaillées et non orientées. Ex: 'Décrivez-moi votre journée de vendredi de A à Z'.">Pose des questions ouvertes</li>
-                    <li class="clickable" data-note="Demandez les détails précis (couleurs, odeurs, bruits) pour vérifier la cohérence de leurs réponses. Ex: 'De quelle couleur était le sac ?'.">Demande les détails précis</li>
-                    <li class="clickable" data-note="Revenez sur un détail plus tard dans l'interrogatoire pour tester la cohérence de leurs réponses. Les menteurs ont du mal à se souvenir de leurs faux détails.">Reviens sur un détail plus tard</li>
-                    <li class="clickable" data-note="Observez les réactions physiques (gestes, regard, voix, agitation) pour détecter des contradictions ou tensions. Un changement d'attitude est souvent révélateur de stress ou d'un mensonge.">Observe les réactions physiques</li>
-                </ul>
-            </div>
+    <p>L’interrogatoire n’est pas une discussion spontanée : c’est une stratégie. 
+    Chaque question doit avoir un BUT : tester une cohérence, provoquer une réaction, ou faire émerger un détail oublié.</p>
+
+    <h4>1. Construire une bonne question : la méthode O.D.R.</h4>
+    <ul>
+        <li><strong>O</strong>bjectif : Pourquoi je pose cette question ? (Tester un alibi ? Un souvenir ? Une émotion ?)</li>
+        <li><strong>D</strong>étail : Quel détail concret je veux obtenir ?</li>
+        <li><strong>R</strong>éaction : Quelle réaction j’attends ? (Stress ? Contradiction ? Sérénité ?)</li>
+    </ul>
+
+    <p>De plus, pour parfaire la méthode O.D.R, il est nécéssaire d'avoir cerné le profil psychologique de l'interrogé car son profil peut dicter ses façons de répondre et ses réactions.</p>
+
+    <p><em>Exemple :</em>  
+    Objectif : Tester la cohérence de l’alibi d’Evan.  
+    Détail : L’endroit exact où il dit avoir garé son camion.  
+    Réaction attendue : Stress s’il ment, réponse fluide s’il dit vrai.</p>
+
+    <h4>2. Types de questions</h4>
+    <ul>
+        <li class="clickable" data-note="Permet d’obtenir une réponse détaillée et spontanée. Exemple : « Racontez-moi votre journée de vendredi, du matin jusqu’au soir. »">
+            Questions ouvertes
+        </li>
+        <li class="clickable" data-note="Utilisées pour vérifier la cohérence logique. Exemple : « Combien de temps avez-vous mis pour rentrer chez vous ? »">
+            Questions factuelles
+        </li>
+        <li class="clickable" data-note="On repose une question plus tard pour tester la stabilité du mensonge. Exemple : Poser 'À quelle heure êtes-vous arrivé ?' puis 20 minutes plus tard 'Rappelez-moi l’heure exacte…'">
+            Questions en double vérification
+        </li>
+        <li class="clickable" data-note="Permet d’observer le non-verbal. Exemple : 'Comment décririez-vous votre relation avec Madeline ?' – un mensonge génère souvent micro-gestes.">
+            Questions émotionnelles
+        </li>
+    </ul>
+
+    <h4>3. Exemples de questions adaptées aux 4 suspects principaux</h4>
+
+    <p><strong>Pour Evan Reed (profil impulsif / fixation)</strong></p>
+    <ul>
+        <li>« Pourquoi vous êtes-vous arrêté plusieurs fois devant sa maison en dehors des livraisons ? »</li>
+        <li>« Vous dites l’avoir vue jeudi soir. Comment était-elle habillée ? »</li>
+        <li>« Où étiez-vous entre 16h et 17h vendredi ? »</li>
+        <li class="clickable" data-note="S'il ment : agitation, changement de ton, regarde ailleurs.">Réaction attendue : agitation si on s’approche de la vérité</li>
+    </ul>
+
+    <p><strong>Pour Hannah Leroux (profil impulsif / tueur opportuniste)</strong></p>
+    <ul>
+        <li>« Pourquoi avez-vous appelé la police autant de fois ces derniers mois ? »</li>
+        <li>« De quoi avez-vous parlé la dernière fois que vous avez vu Madeline ? »</li>
+        <li>« Pourquoi personne ne confirme que vous étiez chez vous vendredi ? »</li>
+        <li class="clickable" data-note="Tendance à se mettre sur la défensive, haussement de ton, justification excessive.">
+            Réaction attendue : défensive immédiate
+        </li>
+    </ul>
+
+    <p><strong>Pour John Miller (profil émotionnel / fragile)</strong></p>
+    <ul>
+        <li>« Comment vous sentiez-vous ces derniers jours ? »</li>
+        <li>« Pourquoi étiez-vous absent en cours vendredi ? »</li>
+        <li>« Aviez-vous prévu de passer voir Madeline ce jour-là ? »</li>
+        <li class="clickable" data-note="S'il n'est pas coupable : tristesse, sincérité, pas de détails inventés.">
+            Réaction attendue : émotion authentique mais pas d'agressivité
+        </li>
+    </ul>
+
+    <p><strong>Pour Ryan Kessler (profil rationnel / motive financier)</strong></p>
+    <ul>
+        <li>« Quel impact l’article de Madeline a-t-il eu sur vos affaires ? »</li>
+        <li>« Pourquoi votre alibi au restaurant ne couvre pas l’heure du meurtre ? »</li>
+        <li>« Avez-vous déjà eu des conflits directs avec elle ? »</li>
+        <li class="clickable" data-note="Comportement calculé, réponses préparées, mais risque d’arrogance ou mépris.">
+            Réaction attendue : maîtrise froide, réponses trop "parfaites"
+        </li>
+    </ul>
+
+    <h4>4. Astuce : les questions « pièges » qui révèlent un mensonge</h4>
+    <ul>
+        <li>Demander une chronologie deux fois.</li>
+        <li>Demander une justification d’un détail insignifiant : les menteurs s’embrouillent.</li>
+        <li>Demander une émotion : les menteurs décrivent des faits, jamais des émotions.</li>
+        <li>Demander la dernière fois qu’ils ont vu la victime : point clé dans TOUTS les interrogatoires.</li>
+    </ul>
+
+    <h4>5. Mini-méthode pour écrire votre stratégie d’interrogatoire</h4>
+    <p>Pour CHAQUE suspect, écrivez :</p>
+
+    <ul>
+        <li><strong>1) Ce que vous voulez tester</strong> (alibi, relation, incohérence…)</li>
+        <li><strong>2) Une question ouverte</strong></li>
+        <li><strong>3) Une question factuelle</strong></li>
+        <li><strong>4) Une question émotionnelle</strong></li>
+        <li><strong>5) La réaction attendue</strong> selon le profil</li>
+    </ul>
+
+    <p>Le but n’est pas d’avoir une "bonne" réponse du suspect, mais de provoquer une réaction qui confirmera ou affaiblira vos hypothèses.</p>
+</div>
+
             
         </div>
         <br>
@@ -549,28 +646,46 @@ const PROFIL_CONTENT = `
 
     <!-- PROFIL 1 : Tueur Irrationnel -->
     <div class="info-section">
-        <h3>1. Le Tueur Irrationnel / Impulsif</h3>
-        <ul>
-            <li class="clickable" data-note="Le tueur impulsif agit sous l’effet d’une émotion intense : colère, peur, humiliation.">
-                Profil général : passage à l’acte soudain, sans planification.
-            </li>
-            <li class="clickable" data-note="Le tueur impulsif peut exploser suite à un rejet, une remarque blessante ou un stress extrême.">
-                Déclencheurs : rejet, crise émotionnelle, perte de contrôle.
-            </li>
-            <li class="clickable" data-note="Ce profil laisse souvent beaucoup d’indices : objets renversés, ADN, empreintes.">
-                Indices matériels : désordre, fuite précipitée, traces multiples.
-            </li>
-            <li class="clickable" data-note="Arme improvisée : lampes, objets du quotidien, outils trouvés sur place.">
-                Armes typiques : objets trouvés sur les lieux.
-            </li>
-            <li class="clickable" data-note="Contradictions fréquentes, agitation, difficulté à soutenir une version stable.">
-                Réaction en interrogatoire : nerveux, incohérent, peut s’emporter.
-            </li>
-            <li class="clickable" data-note="Il est incapable de dissimuler totalement les preuves, ce qui le trahit.">
-                Faiblesses : beaucoup de preuves laissées.
-            </li>
-        </ul>
-    </div>
+    <h3>1. Le Tueur Irrationnel / Impulsif</h3>
+    <ul>
+
+        <li class="clickable" 
+            data-note="Ce type de tueur développe souvent une forme d’attachement obsessionnel envers la victime, un lien imaginaire non réciproque. Il interprète de petits gestes comme des signes d’affection.">
+            Profil général : passage à l’acte soudain, dominé par l’émotion et une fixation affective.
+        </li>
+
+        <li class="clickable" 
+            data-note="Ce lien psychologique unilatéral est très fragile : un refus, une absence de réponse ou une mise à distance peut provoquer un effondrement émotionnel.">
+            Attachement à sens unique : obsession, interprétation erronée des intentions de la victime.
+        </li>
+
+        <li class="clickable" 
+            data-note="Quand la victime impose une limite (ne répond plus, se montre froide, n'accorde pas d'attention), cela peut être vécu comme une 'trahison' déclenchant la crise.">
+            Déclencheurs : rejet, indifférence perçue, rupture imaginaire.
+        </li>
+
+        <li class="clickable" 
+            data-note="Dans un passage à l'acte impulsif, la pièce montre souvent un chaos localisé : objets renversés, déplacement erratique, gestes incontrôlés.">
+            Indices matériels : désordre, lutte brève mais violente, fuite paniquée.
+        </li>
+
+        <li class="clickable"
+            data-note="Il n'utilise presque jamais une arme préparée. Il attrape ce qu'il trouve..">
+            Armes typiques : objets trouvés sur place, usage improvisé.
+        </li>
+
+        <li class="clickable"
+            data-note="Mensonges instables, variations de récit, gestes nerveux, difficulté à maintenir le contact visuel. Peut passer de la confusion à l’agressivité.">
+            Réaction en interrogatoire : incohérent, nerveux, contradictions fréquentes.
+        </li>
+
+        <li class="clickable"
+            data-note="Son impulsivité l’empêche de nettoyer ou cacher les preuves : ADN, empreintes, objets tombés, incohérences d’alibi.">
+            Faiblesses : nombreuses preuves laissées malgré une volonté de fuir rapidement.
+        </li>
+
+    </ul>
+</div>
 
 
     <!-- PROFIL 2 : Tueur Rationnel -->

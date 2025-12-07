@@ -626,7 +626,7 @@ const ADN_CONTENT = `
 
                 <h3>Conclusion ADN</h3>
                 <ul>
-                    <li class="clickable" data-note="Evan Reed est l'unique source de l'ADN étranger sur la scène et l'arme présumée. Jonah Miller et Ryan Kessler sont exclus. Hannah Leroux est exclue.">Suspect principal : Evan Reed (Livreur)</li>
+                    <li class="clickable" data-note="Evan Reed est l'unique source de l'ADN étranger sur la scène et l'arme présumée. Ryan Kessler est exclu.">Suspect principal : Evan Reed (Livreur)</li>
                 </ul>
 
             </div>

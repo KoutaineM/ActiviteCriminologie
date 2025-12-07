@@ -1,6 +1,92 @@
 # 🕵️‍♂️ Activité de Criminologie Interactive  
-## **Enquête : Meurtre de Madeline Shaw**
 
+# 🖥️ Guide d’utilisation du Site d’Enquête
+
+Ce document explique comment préparer, transférer et utiliser le site d’enquête en classe.  
+
+---
+
+# 📂 1. Préparation des fichiers
+
+Le site fonctionne entièrement en local, sans connexion Internet.  
+Il est composé de trois fichiers essentiels :
+
+- `index.html`  
+- `style.css`  
+- `script.js` 
+- `README.md`
+- `Fiche-Acteur.md` 
+
+👉 **Ne jamais modifier les noms de ces fichiers.**  
+👉 **Toujours garder les fichiers dans le même dossier.**
+
+---
+
+# 🔐 2. Fichiers à NE PAS donner aux élèves
+
+Ne pas copier sur les ordinateurs élèves :
+
+- `README.md`  
+- `Fiche-Acteurs.md`  
+
+Ces documents contiennent :
+- les codes secrets,
+- les profils détaillés des acteurs,
+- les réponses prévues aux interrogatoires,
+- la structure complète de l’enquête.
+
+Ils doivent rester uniquement sur ta clé USB.
+
+---
+
+# 💾 3. Mise en place sur clé USB
+
+1. Crée un dossier nommé par exemple :  
+   **`Enquête-Criminologie`**
+2. Place à l’intérieur :  
+   ✔ `index.html`  
+   ✔ `style.css`  
+   ✔ `script.js`  
+3. Garde pour toi :  
+   ❌ `README.md`  
+   ❌ `Fiche-Acteurs.md`  
+
+👉 Tu utiliseras *uniquement ta clé USB* pour installer les fichiers et lancer le site depuis le poste des élèves.
+
+---
+
+# 🌐 4. Navigateur recommandé
+
+Pour un fonctionnement optimal :
+
+✔ **Google Chrome** (recommandé)  
+✔ Edge fonctionne aussi  
+⚠ Firefox peut bloquer certaines fonctions locales → déconseillé  
+❌ Safari (non testé / pas adapté aux salles info)
+
+Si possible, impose :
+
+> **Ouvrir le site dans Google Chrome.**
+
+---
+
+# 🎮 6. Lancement de l’enquête
+
+Une fois `index.html` ouvert :
+
+- Le site charge automatiquement l’interface "dossier police".
+- Les élèves peuvent commencer à naviguer.
+- Certaines pages nécessitent ton intervention pour être débloquées via mot de passe :
+  - suspects  
+  - autopsie  
+  - ADN  
+  - scène finale
+
+Ces codes sont détaillés plus bas.
+
+---
+
+# **Enquête : Meurtre de Madeline Shaw**
 
 # 🎓 Objectifs Pédagogiques
 

@@ -9,13 +9,15 @@ Ce document explique comment préparer, transférer et utiliser le site d’enqu
 # 📂 1. Préparation des fichiers
 
 Le site fonctionne entièrement en local, sans connexion Internet.  
-Il est composé de trois fichiers essentiels :
+Il est composé de 6 fichiers essentiels :
 
 - `index.html`  
 - `style.css`  
 - `script.js` 
 - `README.md`
 - `Fiche-Acteur.md` 
+- `Dossier-Final.md` 
+
 
 👉 **Ne jamais modifier les noms de ces fichiers.**  
 👉 **Toujours garder les fichiers dans le même dossier.**
@@ -47,6 +49,7 @@ Ils doivent rester uniquement sur ta clé USB.
    ✔ `index.html`  
    ✔ `style.css`  
    ✔ `script.js`  
+   ✔ `Dossier-Final.md` 
 3. Garde pour toi :  
    ❌ `README.md`  
    ❌ `Fiche-Acteurs.md`  
@@ -70,7 +73,7 @@ Si possible, impose :
 
 ---
 
-# 🎮 6. Lancement de l’enquête
+# 🎮 5. Lancement de l’enquête
 
 Une fois `index.html` ouvert :
 
@@ -88,7 +91,7 @@ Ces codes sont détaillés plus bas.
 
 # **Enquête : Meurtre de Madeline Shaw**
 
-# 🎓 Objectifs Pédagogiques
+## 🎓 Objectifs Pédagogiques
 
 - Développer la **rigueur argumentative**.  
 - Travailler sur l’exploitation **d’indices variés**.  
@@ -146,7 +149,7 @@ Ceci débloque automatiquement :
 
 ## 4. **Ouverture du dossier d’autopsie**
 
-Au moment choisi par le professeur :
+A un moment, pendant la préparation des interrogatoires :
 
 → Le Game Master entre un **mot de passe secret** pour révéler le rapport complet.
 
@@ -168,6 +171,7 @@ L’autopsie oriente l’interrogatoire surtout vers :
 Focus principal sur :
 - **Evan Reed** → instable, impulsif, incohérent  
 - **Ryan Kessler** → rationnel, froid, mensonge lié à sa vie privée
+- Pas de fiches acteurs prêtes pour les 2 autres suspects
 
 Les deux entretiennent le suspense, mais seul Evan :
 
@@ -208,9 +212,48 @@ Chaque équipe doit produire un dossier structuré contenant :
 - une **conclusion argumentée**,  
 - une **présentation orale** devant le capitaine (professeur).
 
+👉 Appuyez-vous sur le fichier `Dossier-Final.md` qui aidera les élèves à boucler l'enquête.
+
 ---
 
-# 🔐 Codes de déblocage (Game Master)
+## 8. **Présentation orale devant le capitaine**
+
+Chaque équipe devra présenter oralement les conclusions de son enquête devant le capitaine (le professeur), comme lors d’un **briefing final de police**.
+
+#### Objectifs de la présentation orale
+- Expliquer clairement le raisonnement suivi par l’équipe
+- Justifier le choix du coupable à l’aide de preuves concrètes
+- Montrer la cohérence entre scène de crime, interrogatoires, autopsie et ADN
+- Démontrer un travail collectif structuré
+
+---
+
+#### Organisation de la prise de parole
+- **Tous les membres de l’équipe doivent intervenir**
+- La parole doit être répartie équitablement
+
+---
+
+#### Contenu attendu à l’oral
+La présentation doit aborder, dans un ordre logique :
+1. Rappel rapide de l’affaire
+2. Chronologie des faits
+3. Preuves clés de la scène de crime
+4. Résumé des interrogatoires et incohérences
+5. Profil psychologique du tueur
+6. Apports de l’autopsie et de l’ADN
+7. Désignation du coupable et justification
+
+---
+
+📌 **Attention**  
+Il ne s’agit pas de raconter l’histoire, mais de **convaincre** à l’aide d’arguments fondés sur des faits.
+
+Le capitaine pourra interrompre la présentation pour poser des questions ou demander des précisions, comme lors d’un véritable débriefing d’enquête.
+
+# Outils pour le Jeu
+
+## 🔐 Codes de déblocage (Game Master)
 
 | Page / Fonction | Code | Effet |
 |-----------------|------|--------|
@@ -223,24 +266,3 @@ Chaque équipe doit produire un dossier structuré contenant :
 
 ---
 
-# 🧩 Ce que les élèves doivent progressivement comprendre
-
-### ❌ **Ryan Kessler n’est pas le tueur**
-- mais a un profil de “tueur rationnel”,
-- alibi mensonger car il cache une liaison,
-- preuves vérifiables → innocenté.
-
-### ❌ **Hannah Leroux**  
-- alibi faible mais aucun indice matériel.
-
-### ❌ **John Miller**  
-- émotionnel, perturbé, mais aucune preuve physique.
-
-### ✔ **Evan Reed (unique coupable)**
-- présence sur la scène,
-- ADN concordant,
-- traces physiques,
-- contradictions majeures,
-- profil psychologique parfaitement aligné.
-
----
